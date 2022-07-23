@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=}, initial-scale=1.0" />
+    <title>Natalia Viera - Homepage</title>
+
+    <!-- ####### -->
+    <!-- ESTILOS -->
+    <!-- ####### -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- ENCABEZADO -->
+    <header>
+      <a href="index.html">
+        <img src="assets/natalia-logo.svg" alt="logo natalia viera" />
+      </a>
+      <nav>
+        <div class="search-bar">
+          <input type="text" placeholder="Busque aqui..." />
+          <button aria-label="buscar">
+            <img src="assets/lupa.svg" alt="buscar" />
+          </button>
+        </div>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="/">Productos</a></li>
+          <li>
+            <a href="/" class="carrito">
+              <img src="assets/carrito.svg" alt="carrito de compras" />
+              <span>0</span>
+            </a>
+          </li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+          <li><a href="registro.html">Registrarse</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- SECCIÓN HERO -->
+      <section id="hero">
+        <!-- TODO: Buscar una imagen -->
+        <h1>La mejor calidad-precio del mercado al precio más bajo.</h1>
+        <p>
+          En nuestra tienda encontraras todo lo que necesites para trabajar de
+          forma segura de parte de las marcas lideres del rubro.
+        </p>
+        <img src="assets/hero-picture.jpg" alt="imagen principal" />
+        <button type="button">Nuestros productos</button>
+      </section>
+
+      <!-- SECCIÓN PRINCIPAL -->
+      <section id="principal">
+        <!-- CATEGORIAS -->
+        <article>
+          <div class="article__title">
+            <h3>Nuestras categorías</h3>
+            <a href="/">ver todo...</a>
+          </div>
+          <div class="categories">
+            <div>
+              <img src="assets/categoria-indumentaria" alt="indumentaria" />
+              <h2>Indumentaria</h2>
+            </div>
+            <div>
+              <img src="assets/categoria-accesorios" alt="accesorios" />
+              <h2>Accesorios</h2>
+            </div>
+          </div>
+        </article>
+
+        <!-- OFERTAS -->
+        <article>
+          <div class="article__title">
+            <h3>Últimas ofertas</h3>
+            <a href="/">ver más...</a>
+          </div>
+
+          <!-- TODO: cargar productos dinamicamente -->
+          <div id="lista-ofertas"></div>
+        </article>
+
+        <!-- RECIENTES -->
+        <article>
+          <div class="article__title">
+            <h3>Últimos productos</h3>
+            <a href="/">ver más...</a>
+          </div>
+
+          <!-- TODO: cargar productos dinamicamente -->
+          <div id="lista-recientes"></div>
+        </article>
+      </section>
+
+      <!-- SECCIÓN NEWSLETTER -->
+      <section id="newsletter">
+        <h2>¿Querés enterarte de todas nuestras ofertas?</h2>
+        <form action="/" method="post">
+          <div>
+            <input
+              type="email"
+              placeholder="correoejemplo@gmail.com..."
+              aria-label="Correo electronico"
+              id="nl-correo"
+            />
+            <small id="error_nl-correo"></small>
+          </div>
+          <button type="submit" id="nl_btn-enviar">Enviar</button>
+        </form>
+      </section>
+
+      <!-- SECCIÓN CONTACTO -->
+      <section id="contacto">
+        <div>
+          <h2>CONTACTO</h2>
+          <form action="/" method="post">
+            <!-- correo  -->
+            <label for="correo">Correo Electrónico</label>
+            <input
+              type="email"
+              placeholder="correoejemplo@gmail.com..."
+              id="correo"
+            />
+            <small id="error_correo"></small>
+
+            <!-- asunto -->
+            <label for="asunto">Asunto</label>
+            <input type="text" placeholder="Tu asunto aqui..." id="asunto" />
+            <small id="error_asunto"></small>
+
+            <!-- mensaje -->
+            <label for="mensaje">Mensaje</label>
+            <textarea placeholder="Tu mensaje aqui..." id="mensaje"></textarea>
+            <small id="error_mensaje"></small>
+
+            <!-- enviar -->
+            <button type="submit" id="btn-enviar">Enviar</button>
+          </form>
+          <!-- TODO: remplazar lorem -->
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+            eius accusamus vitae aut harum architecto eligendi dicta minus
+            ducimus voluptas fugit iure porro provident culpa alias, in at
+            itaque! Libero?
+          </p>
+          <a
+            href="https://www.facebook.com/people/Natalia-Viera-Seguridad-Corporal/100076407723343/"
+          >
+            <img src="assets/facebook.svg" alt="facebook logo" />
+            Natalia viera Seguridad Corporal
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- SECCIÓN PIE DE PÁGINA -->
+    <footer>
+      <!-- TODO: agregar informacion al footer -->
+      <a href="index.html">
+        <img src="assets/natalia-logo-blanco.svg" alt="logo natalia viera" />
+      </a>
+    </footer>
+
+    <!-- ####### -->
+    <!-- SCRIPTS -->
+    <!-- ####### -->
+    <script src="js/jquery.js"></script>
+  </body>
+</html>

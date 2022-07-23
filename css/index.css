@@ -1,0 +1,116 @@
+/* VARIABLES */
+
+:root {
+  --clr-white: #ffffff;
+  --clr-gray: #484848;
+  --clr-black: #000000;
+  --clr-accent: #2653f1;
+}
+
+/* GLOBAL */
+* {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: var(--clr-black);
+}
+
+section {
+  padding-block: 1.5em;
+}
+
+/* HEADER */
+header {
+  display: flex;
+}
+
+header a {
+  display: flex;
+  flex-shrink: 0;
+}
+
+header a > img {
+  height: 43px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav > ul {
+  display: flex;
+  margin-left: auto;
+  gap: 1em;
+}
+
+.carrito {
+  display: flex;
+}
+
+/* HERO */
+
+/* PRINCIPAL */
+#principal .article__title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#principal .article__title h1 {
+  display: inline;
+}
+
+/* categorias */
+#principal .categories {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* NEWSLETTER */
+#newsletter {
+  background: var(--clr-accent);
+  color: var(--clr-white);
+
+  display: flex;
+}
+
+#newsletter form {
+  display: flex;
+  margin-left: auto;
+}
+
+#newsletter h2 {
+  color: var(--clr-white);
+}
+
+/* CONTACTO */
+#contacto {
+  display: flex;
+}
+
+#contacto form {
+  display: flex;
+  flex-flow: column;
+}
+
+/* FOOTER */
+footer {
+  background: var(--clr-black);
+  color: var(--clr-white);
+  height: 100%;
+}
+
+footer a {
+  display: flex;
+  flex-shrink: 0;
+}
+
+footer a > img {
+  height: 43px;
+}
+
+/* OTRAS COSAS */
+
+input ~ small {
+  color: red;
+}

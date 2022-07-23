@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=}, initial-scale=1.0" />
+    <title>Natalia Viera - Login</title>
+
+    <!-- ####### -->
+    <!-- ESTILOS -->
+    <!-- ####### -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <!-- ENCABEZADO -->
+    <header>
+      <a href="index.html">
+        <img src="assets/natalia-logo.svg" alt="logo natalia viera" />
+      </a>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <form action="php/Login.php" method="post" id="login-form">
+        <h1>Inicio de Sesión</h1>
+
+        <!-- correo -->
+        <label for="correo">Correo Electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="correoejemplo@gmail.com..."
+        />
+        <small id="error_correo"></small>
+
+        <!-- contra -->
+        <label for="contra">Contraseña</label>
+        <input
+          type="password"
+          id="contra"
+          name="contra"
+          placeholder="Tu contraseña aqui..."
+        />
+        <small id="error_contra"></small>
+
+        <!-- ingresar -->
+        <button type="submit" id="btn-ingresar">Ingresar</button>
+        <a href="registro.html">No tienes cuenta? crea una clickeando aqui!</a>
+      </form>
+    </main>
+
+    <!-- ####### -->
+    <!-- SCRIPTS -->
+    <!-- ####### -->
+    <script src="js/jquery.js"></script>
+    <script src="js/validaciones.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+cliente@gmail.com:123:CLIENTE#vendedor@gmail.com:123:VENDEDOR#comprador@gmail.com:123:COMPRADOR#jefe@gmail.com:123:JEFE#prueba123@gmail.com:123:CLIENTE#pablocornudo@gmail.com:pablocornudito:CLIENTE#mauritata@gmail.com:mauritata:CLIENTE
