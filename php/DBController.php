@@ -27,4 +27,5 @@ function crearUsuarioEnDB($correo, $contra)
 {
   $fo = fopen(URL_FILE, "a");
   fwrite($fo, "#" . $correo . ":" . $contra . ":CLIENTE");
+  fclose($fo);
 }

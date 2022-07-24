@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
+
   <body>
     <!-- ENCABEZADO -->
     <header>
@@ -106,16 +107,11 @@
       <section id="newsletter">
         <h2>¿Querés enterarte de todas nuestras ofertas?</h2>
         <form action="/" method="post">
-          <div>
-            <input
-              type="email"
-              placeholder="correoejemplo@gmail.com..."
-              aria-label="Correo electronico"
-              id="nl-correo"
-            />
-            <small id="error_nl-correo"></small>
-          </div>
-          <button type="submit" id="nl_btn-enviar">Enviar</button>
+          <!-- <div>
+          <input type="email" placeholder="correoejemplo@gmail.com..." aria-label="Correo electronico" id="nl-correo" />
+          <small id="error_nl-correo"></small>
+        </div>
+        <button type="submit" id="nl_btn-enviar">Enviar</button> -->
         </form>
       </section>
 
@@ -124,27 +120,23 @@
         <div>
           <h2>CONTACTO</h2>
           <form action="/" method="post">
-            <!-- correo  -->
-            <label for="correo">Correo Electrónico</label>
-            <input
-              type="email"
-              placeholder="correoejemplo@gmail.com..."
-              id="correo"
-            />
-            <small id="error_correo"></small>
+            <!-- correo 
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" placeholder="correoejemplo@gmail.com..." id="correo" />
+          <small id="error_correo"></small>
 
-            <!-- asunto -->
-            <label for="asunto">Asunto</label>
-            <input type="text" placeholder="Tu asunto aqui..." id="asunto" />
-            <small id="error_asunto"></small>
+          asunto
+          <label for="asunto">Asunto</label>
+          <input type="text" placeholder="Tu asunto aqui..." id="asunto" />
+          <small id="error_asunto"></small>
 
-            <!-- mensaje -->
-            <label for="mensaje">Mensaje</label>
-            <textarea placeholder="Tu mensaje aqui..." id="mensaje"></textarea>
-            <small id="error_mensaje"></small>
+          mensaje
+          <label for="mensaje">Mensaje</label>
+          <textarea placeholder="Tu mensaje aqui..." id="mensaje"></textarea>
+          <small id="error_mensaje"></small>
 
-            <!-- enviar -->
-            <button type="submit" id="btn-enviar">Enviar</button>
+          enviar
+          <button type="submit" id="btn-enviar">Enviar</button> -->
           </form>
           <!-- TODO: remplazar lorem -->
         </div>
@@ -176,6 +168,6 @@
     <!-- ####### -->
     <!-- SCRIPTS -->
     <!-- ####### -->
-    <script src="js/jquery.js"></script>
+    <script type="module" src="js/jquery.js"></script>
   </body>
 </html>

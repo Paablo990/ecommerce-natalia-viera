@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=}, initial-scale=1.0" />
-    <title>Natalia Viera - Login</title>
 
-    <!-- ####### -->
-    <!-- ESTILOS -->
-    <!-- ####### -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=}, initial-scale=1.0" />
+  <title>Natalia Viera - Login</title>
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/login.css" />
-  </head>
-  <body>
-    <!-- ENCABEZADO -->
-    <header>
-      <a href="index.html">
-        <img src="assets/natalia-logo.svg" alt="logo natalia viera" />
-      </a>
-    </header>
+  <!-- ####### -->
+  <!-- ESTILOS -->
+  <!-- ####### -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap" rel="stylesheet" />
 
-    <!-- MAIN -->
-    <main>
-      <!-- TODO: separarlo probablemente en un formulario de 2 pasos -->
-      <!-- TODO: descomentar los campos nombre, telefono y cedula -->
-      <form action="php/Registro.php" method="post" id="register-form">
-        <h1>Registro</h1>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
 
-        <!-- TODO: separarlo en nombre y apellido al menos -->
-        <!-- nombre -->
-        <!-- <label for="nombre">Nombre </label>
+<body>
+  <!-- ENCABEZADO -->
+  <header>
+    <a href="index.php">
+      <img src="assets/natalia-logo.svg" alt="logo natalia viera" />
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- TODO: separarlo probablemente en un formulario de 2 pasos -->
+    <!-- TODO: descomentar los campos nombre, telefono y cedula -->
+    <form action="php/RegistroController.php" method="post" id="register-form">
+      <h1>Registro</h1>
+
+      <!-- TODO: separarlo en nombre y apellido al menos -->
+      <!-- nombre -->
+      <!-- <label for="nombre">Nombre </label>
         <input
           type="text"
           id="nombre"
@@ -45,8 +44,8 @@
         />
         <small id="error_nombre"></small> -->
 
-        <!-- cedula -->
-        <!-- <label for="cedula">Cédula</label>
+      <!-- cedula -->
+      <!-- <label for="cedula">Cédula</label>
         <input
           type="text"
           id="cedula"
@@ -55,28 +54,18 @@
         />
         <small id="error_cedula"></small> -->
 
-        <!-- correo -->
-        <label for="correo">Correo Electrónico</label>
-        <input
-          type="email"
-          id="correo"
-          name="correo"
-          placeholder="correoejemplo@gmail.com..."
-        />
-        <small id="error_correo"></small>
+      <!-- correo -->
+      <label for="correo">Correo Electrónico</label>
+      <input type="email" id="correo" name="correo" />
+      <small id="error_correo"></small>
 
-        <!-- contra -->
-        <label for="contra">Contraseña</label>
-        <input
-          type="password"
-          id="contra"
-          name="contra"
-          placeholder="Tu contraseña aqui..."
-        />
-        <small id="error_contra"></small>
+      <!-- contra -->
+      <label for="contra">Contraseña</label>
+      <input type="password" id="contra" name="contra" />
+      <small id="error_contra"></small>
 
-        <!-- telefono -->
-        <!-- <label for="telefono">Teléfono</label>
+      <!-- telefono -->
+      <!-- <label for="telefono">Teléfono</label>
         <input
           type="text"
           id="telefono"
@@ -85,18 +74,19 @@
         />
         <small id="error_telefono"></small> -->
 
-        <!-- ingresar -->
-        <button type="submit" id="btn-crear">Crear</button>
-        <a href="login.html">
-          Ya tienes cuenta? inicia sesión clickeando aqui!
-        </a>
-      </form>
-    </main>
-    <!-- ####### -->
-    <!-- SCRIPTS -->
-    <!-- ####### -->
-    <script src="js/jquery.js"></script>
-    <script src="js/validaciones.js"></script>
-    <script src="js/registro.js"></script>
-  </body>
+      <!-- ingresar -->
+      <button type="submit" id="btn-crear">Crear</button>
+      <a href="login.php">
+        Ya tienes cuenta? inicia sesión clickeando aqui!
+      </a>
+    </form>
+
+  </main>
+
+  <!-- ####### -->
+  <!-- SCRIPTS -->
+  <!-- ####### -->
+  <script type="module" src="js/jquery.js"></script>
+</body>
+
 </html>

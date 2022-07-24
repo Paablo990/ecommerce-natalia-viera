@@ -1,14 +1,18 @@
 <?php
 
 include_once('DBController.php');
+include_once('Validaciones.php');
 
 $correo = $_POST['correo'];
 $contra = $_POST['contra'];
 
+// TODO: sacar esto de aca (validar en js)
+if (inputsVacios(array($correo, $contra))) return header('Location: ../login.html');
+
 $rango = existeUsuarioEnDB($correo, $contra);
 
 // TODO: sacar esto de aca (validar en js)
-if ($rango == 'NO EXISTE') header('Location: ../login.html');
+if ($rango == 'ERROR') return header('Location: ../login.html');
 
 switch ($rango) {
   case 'JEFE':
@@ -21,6 +25,6 @@ switch ($rango) {
     header('Location: ../prueba/comprador.html');
     break;
   default:
-    header('Location: ../index.html');
+    header('Location: ../prueba/cliente.html');
     break;
 }
