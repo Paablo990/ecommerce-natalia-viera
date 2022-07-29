@@ -3,171 +3,303 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=}, initial-scale=1.0" />
-    <title>Natalia Viera - Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Viera - Home</title>
 
-    <!-- ####### -->
-    <!-- ESTILOS -->
-    <!-- ####### -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <!-- estilos -->
+    <link rel="stylesheet" href="css/tailwindcss.css" />
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <!-- scripts -->
+    <script src="js/jquery.js" defer></script>
+    <script src="js/index.js" defer></script>
   </head>
-
   <body>
-    <!-- ENCABEZADO -->
-    <header>
-      <a href="index.html">
-        <img src="assets/natalia-logo.svg" alt="logo natalia viera" />
-      </a>
-      <nav>
-        <div class="search-bar">
-          <input type="text" placeholder="Busque aqui..." />
-          <button aria-label="buscar">
-            <img src="assets/lupa.svg" alt="buscar" />
-          </button>
-        </div>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="/">Productos</a></li>
+    <!-- header -->
+    <header class="sticky top-0 z-20 border-b border-natalia-gray-300 bg-white">
+      <nav class="container flex py-4">
+        <!-- logo -->
+        <a href="./index.html" class="my-auto flex h-8 flex-shrink-0">
+          <img
+            src="./assets/natalia-logo.svg"
+            alt="Logo Natalia Viera: seguridad corporal"
+            class="h-full"
+          />
+        </a>
+
+        <!-- menu -->
+        <button type="button" class="ml-auto flex h-8 self-center sm:hidden">
+          <img
+            src="./assets/menu.svg"
+            alt="hamburger menu"
+            aria-label="boton menu"
+          />
+        </button>
+        <ul
+          class="ml-auto hidden items-center gap-3 sm:flex sm:text-xs md:text-base"
+        >
           <li>
-            <a href="/" class="carrito">
-              <img src="assets/carrito.svg" alt="carrito de compras" />
-              <span>0</span>
+            <a href="/">Inicio</a>
+          </li>
+          <li>
+            <a href="/">Productos</a>
+          </li>
+          <li>
+            <a href="/">Contacto</a>
+          </li>
+          <li>
+            <a href="" class="flex items-center gap-1">
+              <img
+                src="./assets/carrito.svg"
+                alt="carrito"
+                class="h-6"
+                aria-label="carrito"
+              />
+              <span class="font-bold">0</span>
             </a>
           </li>
-          <li><a href="login.html">Iniciar Sesión</a></li>
-          <li><a href="registro.html">Registrarse</a></li>
+          <img
+            src="assets/nav-deco.svg"
+            alt=""
+            aria-hidden="true"
+            class="mx-2 h-8 min-w-min"
+          />
+          <li>
+            <a
+              href="/"
+              class="whitespace-nowrap rounded-md bg-natalia-blue-400 px-4 py-2 font-black uppercase text-white"
+            >
+              Iniciar Sesión
+            </a>
+          </li>
+          <li>
+            <a href="/" class="underline">Registro</a>
+          </li>
         </ul>
       </nav>
     </header>
+
+    <!-- main -->
     <main>
-      <!-- SECCIÓN HERO -->
-      <section id="hero">
-        <!-- TODO: Buscar una imagen -->
-        <h1>La mejor calidad-precio del mercado al precio más bajo.</h1>
-        <p>
-          En nuestra tienda encontraras todo lo que necesites para trabajar de
-          forma segura de parte de las marcas lideres del rubro.
-        </p>
-        <img src="assets/hero-picture.jpg" alt="imagen principal" />
-        <button type="button">Nuestros productos</button>
-      </section>
-
-      <!-- SECCIÓN PRINCIPAL -->
-      <section id="principal">
-        <!-- CATEGORIAS -->
-        <article>
-          <div class="article__title">
-            <h3>Nuestras categorías</h3>
-            <a href="/">ver todo...</a>
+      <!-- hero -->
+      <section class="relative border-b border-natalia-gray-300">
+        <div class="container flex gap-12 overflow-y-hidden py-24 md:py-32">
+          <div class="md:3/4 lg:w-2/4">
+            <h1 class="text-5xl font-black leading-none">
+              Todo en
+              <span
+                class="bg-gradient-to-tl from-natalia-blue-400 to-natalia-lightblue-400 bg-clip-text text-transparent"
+                >seguridad corporal</span
+              >
+              al mejor precio del mercado.
+            </h1>
+            <p class="py-6 leading-relaxed text-natalia-gray-400">
+              En nuestra tienda encontraras los mejores equipos de seguridad
+              personal de todo el mercado, para trabajar de forma segura de
+              parte de las marcas lideres en el rubro.
+            </p>
+            <a
+              href=""
+              class="rounded-md bg-natalia-blue-400 py-2 px-4 font-black uppercase text-white"
+            >
+              Nuestros productos
+            </a>
           </div>
-          <div class="categories">
-            <div>
-              <img src="assets/categoria-indumentaria" alt="indumentaria" />
-              <h2>Indumentaria</h2>
-            </div>
-            <div>
-              <img src="assets/categoria-accesorios" alt="accesorios" />
-              <h2>Accesorios</h2>
-            </div>
-          </div>
-        </article>
-
-        <!-- OFERTAS -->
-        <article>
-          <div class="article__title">
-            <h3>Últimas ofertas</h3>
-            <a href="/">ver más...</a>
-          </div>
-
-          <!-- TODO: cargar productos dinamicamente -->
-          <div id="lista-ofertas"></div>
-        </article>
-
-        <!-- RECIENTES -->
-        <article>
-          <div class="article__title">
-            <h3>Últimos productos</h3>
-            <a href="/">ver más...</a>
-          </div>
-
-          <!-- TODO: cargar productos dinamicamente -->
-          <div id="lista-recientes"></div>
-        </article>
-      </section>
-
-      <!-- SECCIÓN NEWSLETTER -->
-      <section id="newsletter">
-        <h2>¿Querés enterarte de todas nuestras ofertas?</h2>
-        <form action="/" method="post">
-          <!-- <div>
-          <input type="email" placeholder="correoejemplo@gmail.com..." aria-label="Correo electronico" id="nl-correo" />
-          <small id="error_nl-correo"></small>
         </div>
-        <button type="submit" id="nl_btn-enviar">Enviar</button> -->
-        </form>
+        <div
+          class="hero-img md:1/4 absolute top-0 right-0 hidden h-full bg-cover bg-bottom md:flex lg:w-2/4"
+        ></div>
       </section>
 
-      <!-- SECCIÓN CONTACTO -->
-      <section id="contacto">
-        <div>
-          <h2>CONTACTO</h2>
-          <form action="/" method="post">
-            <!-- correo 
-          <label for="correo">Correo Electrónico</label>
-          <input type="email" placeholder="correoejemplo@gmail.com..." id="correo" />
-          <small id="error_correo"></small>
+      <!-- lista de productos -->
+      <section>
+        <!-- nuestras categorias -->
+        <article class="container">
+          <div class="flex items-center py-8">
+            <h2 class="text-xl font-black uppercase">Nuestras categorías</h2>
+            <a href="/" class="ml-auto text-natalia-blue-400">ver más...</a>
+          </div>
+          <div class="flex flex-col gap-6 md:flex-row md:gap-16">
+            <!-- indumentaria -->
+            <div
+              class="flex aspect-video h-full max-h-48 w-full flex-col border border-natalia-gray-300"
+            >
+              <!-- <img
+                src="./assets/indumentaria.jpg"
+                alt="Foto de indumentaria"
+                class="w-full object-cover"
+              /> -->
+              <div class="h-full w-full bg-natalia-gray-300"></div>
+              <h2
+                class="inline bg-gradient-to-tr from-natalia-blue-400 to-natalia-lightblue-400 bg-clip-text px-3 py-1 text-3xl font-black uppercase text-transparent"
+              >
+                Indumentaria
+              </h2>
+            </div>
+            <!-- accesorios -->
+            <div
+              class="flex aspect-video h-full max-h-48 w-full flex-col border border-natalia-gray-300"
+            >
+              <!-- <img
+                src="./assets/indumentaria.jpg"
+                alt="Foto de indumentaria"
+                class="w-full object-cover"
+              /> -->
+              <div class="h-full w-full bg-natalia-gray-300"></div>
+              <h2
+                class="bg-gradient-to-tr from-natalia-blue-400 to-natalia-lightblue-400 bg-clip-text px-3 py-1 text-3xl font-black uppercase text-transparent"
+              >
+                Accesorios
+              </h2>
+            </div>
+          </div>
+        </article>
 
-          asunto
-          <label for="asunto">Asunto</label>
-          <input type="text" placeholder="Tu asunto aqui..." id="asunto" />
-          <small id="error_asunto"></small>
+        <!-- ultimos productos -->
+        <article>
+          <div class="container">
+            <div
+              class="items flex flex-col items-center gap-2 py-8 sm:flex-row"
+            >
+              <h2 class="text-xl font-black uppercase">Últimos productos</h2>
+              <a href="/" class="text-natalia-blue-400 sm:ml-auto">
+                ver más...
+              </a>
+            </div>
+            <div>
+              <!-- TODO: cargar por js -->
+              <ul
+                id="last-products"
+                class="grid-col-1 grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+              ></ul>
+            </div>
+          </div>
+        </article>
 
-          mensaje
-          <label for="mensaje">Mensaje</label>
-          <textarea placeholder="Tu mensaje aqui..." id="mensaje"></textarea>
-          <small id="error_mensaje"></small>
+        <!-- ultimas ofertas -->
+        <article class="border-b border-natalia-gray-300 pb-8">
+          <div class="container">
+            <div
+              class="items flex flex-col items-center gap-2 py-8 sm:flex-row"
+            >
+              <h2 class="text-xl font-black uppercase">Últimas ofertas</h2>
+              <a href="/" class="text-natalia-blue-400 sm:ml-auto">
+                ver más...
+              </a>
+            </div>
+            <div>
+              <!-- TODO: cargar por js -->
+              <ul
+                id="last-offers"
+                class="grid-col-1 grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+              ></ul>
+            </div>
+          </div>
+        </article>
+      </section>
 
-          enviar
-          <button type="submit" id="btn-enviar">Enviar</button> -->
+      <!-- newsletter -->
+      <section
+        class="bg-gradient-to-br from-natalia-blue-400 to-natalia-blue-500"
+      >
+        <div
+          class="container flex flex-col items-center gap-4 py-20 text-center sm:flex-row md:text-left"
+        >
+          <h2 class="text-3xl font-black text-white">
+            ¿Querés enterarte de todas nuestras ofertas?
+          </h2>
+          <form class="md: flex flex-col gap-4 md:ml-auto md:flex-row">
+            <input
+              type="email"
+              placeholder="correoejemplo@gmail.com..."
+              class="rounded-md border-2 border-white bg-transparent px-3 py-2 text-white"
+            />
+            <button
+              type="submit"
+              class="mr-auto w-full rounded-md bg-white px-3 py-2 font-black uppercase text-natalia-blue-400 md:w-auto"
+            >
+              Enviar
+            </button>
           </form>
-          <!-- TODO: remplazar lorem -->
         </div>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
-            eius accusamus vitae aut harum architecto eligendi dicta minus
-            ducimus voluptas fugit iure porro provident culpa alias, in at
-            itaque! Libero?
-          </p>
-          <a
-            href="https://www.facebook.com/people/Natalia-Viera-Seguridad-Corporal/100076407723343/"
+      </section>
+
+      <!-- contacto -->
+      <section class="container py-6">
+        <h2 class="mb-6 text-center text-xl font-black uppercase">Contacto</h2>
+        <div class="flex flex-col md:flex-row">
+          <form
+            class="relative mb-[32px] flex flex-col gap-1 before:absolute before:bottom-[-32px] before:left-0 before:h-px before:w-full before:bg-black md:w-2/3 md:pr-[32px] md:before:bottom-0 md:before:right-[32px] md:before:left-full md:before:h-full md:before:w-px"
           >
-            <img src="assets/facebook.svg" alt="facebook logo" />
-            Natalia viera Seguridad Corporal
-          </a>
+            <!-- correo -->
+            <label for="contacto-correo" class="font-bold"
+              >Correo electronico</label
+            >
+            <input
+              type="email"
+              name="contacto-correo"
+              id="contacto-correo"
+              placeholder="correodeejemplo@gmail.com..."
+              class="input"
+            />
+            <small id="error_contacto-correo" class="input-error"></small>
+
+            <!-- asunto -->
+            <label for="contacto-asunto" class="font-bold">Asunto</label>
+            <input
+              type="text"
+              name="contacto-asunto"
+              id="contacto-asunto"
+              placeholder="Tu asunto aqui..."
+              class="input"
+            />
+            <small id="error_contacto-asunto" class="input-error"></small>
+
+            <!-- mensaje -->
+            <label for="contacto-mensaje" class="font-bold">Mensaje</label>
+            <textarea
+              name="contacto-mensaje"
+              id="contacto-mensaje"
+              placeholder="Tu mensaje aqui..."
+              rows="10"
+              class="input"
+            ></textarea>
+            <small id="error_contacto-mensaje" class="input-error"></small>
+
+            <!-- boton -->
+            <button
+              type="submit"
+              name="contacto-boton"
+              id="contacto-boton"
+              class="mt-4 rounded-md bg-black py-2 font-black uppercase text-white"
+            >
+              Enviar
+            </button>
+          </form>
+
+          <!-- info contacto -->
+          <div
+            class="mt-[32px] flex flex-col gap-4 md:mt-0 md:ml-[32px] md:w-1/3"
+          >
+            <p class="text-natalia-gray-400">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              facilis quisquam cumque consequatur rerum sapiente excepturi
+              doloremque tenetur exercitationem libero voluptatum soluta iste
+              illo incidunt deserunt, quod et adipisci aut!
+            </p>
+            <a
+              href="https://www.facebook.com/people/Natalia-Viera-Seguridad-Corporal/100076407723343/"
+              class="flex items-center gap-2"
+            >
+              <img
+                src="./assets/facebook.svg"
+                alt="icono facebook"
+                class="aspect-square w-12"
+              />
+              Natalia Viera Seguridad Corporal
+            </a>
+          </div>
         </div>
       </section>
     </main>
-
-    <!-- SECCIÓN PIE DE PÁGINA -->
-    <footer>
-      <!-- TODO: agregar informacion al footer -->
-      <a href="index.html">
-        <img src="assets/natalia-logo-blanco.svg" alt="logo natalia viera" />
-      </a>
-    </footer>
-
-    <!-- ####### -->
-    <!-- SCRIPTS -->
-    <!-- ####### -->
-    <script type="module" src="js/jquery.js"></script>
   </body>
 </html>
