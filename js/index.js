@@ -6,7 +6,7 @@ $(() => {
       titulo: 'Producto 1 mega nashe',
       descripcion:
         'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-      precio: 700
+      precio: 700,
     },
     {
       id: 1,
@@ -14,7 +14,7 @@ $(() => {
       titulo: 'Producto 1 mega nashe',
       descripcion:
         'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-      precio: 700
+      precio: 700,
     },
     {
       id: 1,
@@ -22,7 +22,7 @@ $(() => {
       titulo: 'Producto 1 mega nashe',
       descripcion:
         'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-      precio: 700
+      precio: 700,
     },
     {
       id: 1,
@@ -30,7 +30,7 @@ $(() => {
       titulo: 'Producto 1 mega nashe',
       descripcion:
         'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-      precio: 700
+      precio: 700,
     },
     {
       id: 1,
@@ -38,7 +38,7 @@ $(() => {
       titulo: 'Producto 1 mega nashe',
       descripcion:
         'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-      precio: 700
+      precio: 700,
     },
     {
       id: 1,
@@ -46,16 +46,17 @@ $(() => {
       titulo: 'Producto 1 mega nashe',
       descripcion:
         'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-      precio: 700
-    }
+      precio: 700,
+    },
   ];
 
   const $listaUltimosProductos = $('#last-products');
   PRODUCTOS.map(producto => {
     $listaUltimosProductos.append(
       `<li class="product">
-        <a href="/">
-          <img src="${producto.img}" alt="" />
+      <a href="/">
+      <img src="${producto.img}" alt="" />
+          </a>
           <h3>${producto.titulo}</h3>
           <p>
             ${producto.descripcion}
@@ -64,7 +65,6 @@ $(() => {
             <span>$${producto.precio}</span>
             <button type="button">Agregar</button>
           </div>
-        </a>
       </li>`
     );
   });

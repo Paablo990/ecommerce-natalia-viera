@@ -38,13 +38,13 @@
           class="ml-auto hidden items-center gap-3 sm:flex sm:text-xs md:text-base"
         >
           <li>
-            <a href="/">Inicio</a>
+            <a href="#hero">Inicio</a>
           </li>
           <li>
             <a href="/">Productos</a>
           </li>
           <li>
-            <a href="/">Contacto</a>
+            <a href="#contacto">Contacto</a>
           </li>
           <li>
             <a href="" class="flex items-center gap-1">
@@ -81,7 +81,7 @@
     <!-- main -->
     <main>
       <!-- hero -->
-      <section class="relative border-b border-natalia-gray-300">
+      <section class="relative border-b border-natalia-gray-300" id="hero">
         <div class="container flex gap-12 overflow-y-hidden py-24 md:py-32">
           <div class="md:3/4 lg:w-2/4">
             <h1 class="text-5xl font-black leading-none">
@@ -120,37 +120,39 @@
           </div>
           <div class="flex flex-col gap-6 md:flex-row md:gap-16">
             <!-- indumentaria -->
-            <div
+            <a
+              href="/"
               class="flex aspect-video h-full max-h-48 w-full flex-col border border-natalia-gray-300"
             >
-              <!-- <img
+              <img
                 src="./assets/indumentaria.jpg"
                 alt="Foto de indumentaria"
-                class="w-full object-cover"
-              /> -->
-              <div class="h-full w-full bg-natalia-gray-300"></div>
+                class="h-full border-b border-natalia-gray-300 object-cover"
+              />
+              <!-- <div class="h-full w-full bg-natalia-gray-300"></div> -->
               <h2
                 class="inline bg-gradient-to-tr from-natalia-blue-400 to-natalia-lightblue-400 bg-clip-text px-3 py-1 text-3xl font-black uppercase text-transparent"
               >
                 Indumentaria
               </h2>
-            </div>
+            </a>
             <!-- accesorios -->
-            <div
+            <a
+              href="/"
               class="flex aspect-video h-full max-h-48 w-full flex-col border border-natalia-gray-300"
             >
-              <!-- <img
-                src="./assets/indumentaria.jpg"
+              <img
+                src="./assets/accesorios.jpg"
                 alt="Foto de indumentaria"
-                class="w-full object-cover"
-              /> -->
-              <div class="h-full w-full bg-natalia-gray-300"></div>
+                class="h-full border-b border-natalia-gray-300 object-cover"
+              />
+              <!-- <div class="h-full w-full bg-natalia-gray-300"></div> -->
               <h2
-                class="bg-gradient-to-tr from-natalia-blue-400 to-natalia-lightblue-400 bg-clip-text px-3 py-1 text-3xl font-black uppercase text-transparent"
+                class="inline bg-gradient-to-tr from-natalia-blue-400 to-natalia-lightblue-400 bg-clip-text px-3 py-1 text-3xl font-black uppercase text-transparent"
               >
                 Accesorios
               </h2>
-            </div>
+            </a>
           </div>
         </article>
 
@@ -224,7 +226,7 @@
       </section>
 
       <!-- contacto -->
-      <section class="container py-6">
+      <section class="container py-6" id="contacto">
         <h2 class="mb-6 text-center text-xl font-black uppercase md:text-left">
           Contacto
         </h2>
@@ -262,7 +264,7 @@
               name="contacto-mensaje"
               id="contacto-mensaje"
               placeholder="Tu mensaje aqui..."
-              rows="10"
+              rows="6"
               class="input"
             ></textarea>
             <small id="error_contacto-mensaje" class="input-error"></small>
