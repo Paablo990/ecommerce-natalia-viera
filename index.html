@@ -27,15 +27,16 @@
         </a>
 
         <!-- menu -->
-        <button type="button" class="ml-auto flex h-8 self-center sm:hidden">
-          <img
-            src="./assets/menu.svg"
-            alt="hamburger menu"
-            aria-label="boton menu"
-          />
+        <button
+          type="button"
+          id="menu-boton"
+          class="ml-auto flex h-8 self-center sm:hidden"
+          aria-label="boton menu"
+        >
+          <img src="./assets/menu.svg" alt="hamburger menu" />
         </button>
         <ul
-          class="ml-auto hidden items-center gap-3 sm:flex sm:text-xs md:text-base"
+          class="absolute top-[64px] -right-full sm:relative sm:right-0 sm:top-0 sm:ml-auto sm:flex sm:items-center sm:gap-3 sm:text-xs sm:opacity-100 md:text-base"
         >
           <li>
             <a href="#hero">Inicio</a>
@@ -47,7 +48,7 @@
             <a href="#contacto">Contacto</a>
           </li>
           <li>
-            <a href="" class="flex items-center gap-1">
+            <a href="" class="flex items-center gap-1" id="carrito">
               <img
                 src="./assets/carrito.svg"
                 alt="carrito"
@@ -206,14 +207,14 @@
         <div
           class="container flex flex-col items-center gap-4 py-20 text-center sm:flex-row md:text-left"
         >
-          <h2 class="text-3xl font-black text-white">
+          <h2 class="text-3xl font-black text-white lg:w-4/5">
             ¿Querés enterarte de todas nuestras ofertas?
           </h2>
-          <form class="md: flex flex-col gap-4 md:ml-auto md:flex-row">
+          <form class="flex flex-col gap-4 md:ml-0 md:w-full md:flex-row">
             <input
               type="email"
               placeholder="correoejemplo@gmail.com..."
-              class="rounded-md border-2 border-white bg-transparent px-3 py-2 text-white"
+              class="w-full rounded-md border-2 border-white bg-transparent px-3 py-2 text-white"
             />
             <button
               type="submit"

@@ -615,6 +615,14 @@ video {
   top: 0px;
 }
 
+.top-\[64px\]{
+  top: 64px;
+}
+
+.-right-full{
+  right: -100%;
+}
+
 .right-0{
   right: 0px;
 }
@@ -721,10 +729,6 @@ video {
 
 .items-center{
   align-items: center;
-}
-
-.gap-3{
-  gap: 0.75rem;
 }
 
 .gap-1{
@@ -974,6 +978,67 @@ html {
   background-image: url('../assets/hero-picture.jpg');
 }
 
+/* menu */
+
+#menu-boton.open + ul {
+  transition: all 250ms ease-in-out;
+  position: absolute;
+  top: 64px;
+  right: 0px;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  border-left-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(217 217 217 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 1.5rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  opacity: 1;
+}
+
+#menu-boton.open + ul > img{
+  display: none;
+}
+
+#menu-boton.open + ul > li{
+  display: flex;
+  width: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+#menu-boton.open + ul > li > a{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-transform: uppercase;
+}
+
+#menu-boton.open + ul > li:nth-last-child(1) > a{
+  border-radius: 0.375rem;
+  border-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(38 83 241 / var(--tw-border-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(38 83 241 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
 /* products card */
 
 .product{
@@ -1133,6 +1198,18 @@ html {
 }
 
 @media (min-width: 640px){
+  .sm\:relative{
+    position: relative;
+  }
+
+  .sm\:right-0{
+    right: 0px;
+  }
+
+  .sm\:top-0{
+    top: 0px;
+  }
+
   .sm\:ml-auto{
     margin-left: auto;
   }
@@ -1153,15 +1230,27 @@ html {
     flex-direction: row;
   }
 
+  .sm\:items-center{
+    align-items: center;
+  }
+
+  .sm\:gap-3{
+    gap: 0.75rem;
+  }
+
   .sm\:text-xs{
     font-size: 0.75rem;
     line-height: 1rem;
   }
+
+  .sm\:opacity-100{
+    opacity: 1;
+  }
 }
 
 @media (min-width: 768px){
-  .md\:ml-auto{
-    margin-left: auto;
+  .md\:ml-0{
+    margin-left: 0px;
   }
 
   .md\:mt-0{
@@ -1174,6 +1263,10 @@ html {
 
   .md\:flex{
     display: flex;
+  }
+
+  .md\:w-full{
+    width: 100%;
   }
 
   .md\:w-auto{
@@ -1243,6 +1336,10 @@ html {
 @media (min-width: 1024px){
   .lg\:w-2\/4{
     width: 50%;
+  }
+
+  .lg\:w-4\/5{
+    width: 80%;
   }
 
   .lg\:grid-cols-6{
