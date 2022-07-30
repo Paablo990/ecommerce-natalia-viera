@@ -13,7 +13,7 @@
     <script src="js/jquery.js" defer></script>
     <script src="js/index.js" defer></script>
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <!-- header -->
     <header class="sticky top-0 z-20 border-b border-natalia-gray-300 bg-white">
       <nav class="container flex py-4">
@@ -36,7 +36,7 @@
           <img src="./assets/menu.svg" alt="hamburger menu" />
         </button>
         <ul
-          class="absolute top-[64px] -right-full sm:relative sm:right-0 sm:top-0 sm:ml-auto sm:flex sm:items-center sm:gap-3 sm:text-xs sm:opacity-100 md:text-base"
+          class="absolute top-[64px] -right-full hidden sm:relative sm:right-0 sm:top-0 sm:ml-auto sm:flex sm:items-center sm:gap-3 sm:text-xs sm:opacity-100 md:text-base"
         >
           <li>
             <a href="#hero">Inicio</a>
@@ -63,9 +63,8 @@
             alt=""
             aria-hidden="true"
             class="mx-2 h-8 min-w-min"
-            
           />
-          <!-- fdsdfsd -->
+
           <li>
             <a
               href="/"
@@ -125,7 +124,7 @@
             <!-- indumentaria -->
             <a
               href="/"
-              class="flex aspect-video h-full max-h-48 w-full flex-col border border-natalia-gray-300"
+              class="flex aspect-video h-full max-h-48 w-full flex-col border border-natalia-gray-300 transition-transform hover:scale-105 hover:transform"
             >
               <img
                 src="./assets/indumentaria.jpg"
@@ -142,7 +141,7 @@
             <!-- accesorios -->
             <a
               href="/"
-              class="flex aspect-video h-full max-h-48 w-full flex-col border border-natalia-gray-300"
+              class="flex aspect-video h-full max-h-48 w-full flex-col border border-natalia-gray-300 transition-transform hover:scale-105 hover:transform"
             >
               <img
                 src="./assets/accesorios.jpg"
@@ -162,13 +161,9 @@
         <!-- ultimos productos -->
         <article>
           <div class="container">
-            <div
-              class="items flex flex-col items-center gap-2 py-8 sm:flex-row"
-            >
+            <div class="flex items-center gap-2 py-8">
               <h2 class="text-xl font-black uppercase">Últimos productos</h2>
-              <a href="/" class="text-natalia-blue-400 sm:ml-auto">
-                ver más...
-              </a>
+              <a href="/" class="ml-auto text-natalia-blue-400"> ver más... </a>
             </div>
             <div>
               <!-- TODO: cargar por js -->
@@ -183,13 +178,9 @@
         <!-- ultimas ofertas -->
         <article class="border-b border-natalia-gray-300 pb-8">
           <div class="container">
-            <div
-              class="items flex flex-col items-center gap-2 py-8 sm:flex-row"
-            >
+            <div class="flex items-center gap-2 py-8">
               <h2 class="text-xl font-black uppercase">Últimas ofertas</h2>
-              <a href="/" class="text-natalia-blue-400 sm:ml-auto">
-                ver más...
-              </a>
+              <a href="/" class="ml-auto text-natalia-blue-400"> ver más... </a>
             </div>
             <div>
               <!-- TODO: cargar por js -->

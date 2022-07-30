@@ -38,7 +38,7 @@ html {
 
 /* products card */
 .product {
-  @apply max-w-[70%] place-self-center border border-natalia-gray-300 p-4 sm:max-w-[12em] md:place-self-auto;
+  @apply max-w-[70%] transform place-self-center border border-natalia-gray-300 p-4 transition-transform focus-within:-translate-y-2 hover:-translate-y-2 sm:max-w-[12em] md:place-self-auto;
 }
 
 .product img {

@@ -69,17 +69,17 @@ $(() => {
   PRODUCTOS.map(producto => {
     $listaUltimosProductos.append(
       `<li class="product">
-      <a href="/">
-      <img src="${producto.img}" alt="" />
-          </a>
-          <h3>${producto.titulo}</h3>
-          <p>
-            ${producto.descripcion}
-          </p>
-          <div>
-            <span>$${producto.precio}</span>
-            <button type="button">Agregar</button>
-          </div>
+        <a href="/">
+          <img src="${producto.img}" alt="" />
+        </a>
+        <h3>${producto.titulo}</h3>
+        <p>
+          ${producto.descripcion}
+        </p>
+        <div>
+          <span>$${producto.precio}</span>
+          <button type="button">Agregar</button>
+        </div>
       </li>`
     );
   });
@@ -91,15 +91,15 @@ $(() => {
       `<li class="product">
         <a href="/">
           <img src="${producto.img}" alt="" />
-          <h3>${producto.titulo}</h3>
-          <p>
-            ${producto.descripcion}
-          </p>
-          <div>
-            <span>$${producto.precio}</span>
-            <button type="button">Agregar</button>
-          </div>
         </a>
+        <h3>${producto.titulo}</h3>
+        <p>
+          ${producto.descripcion}
+        </p>
+        <div>
+          <span>$${producto.precio}</span>
+          <button type="button">Agregar</button>
+        </div>
       </li>`
     );
   });
