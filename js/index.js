@@ -66,18 +66,18 @@ $(() => {
 
   // CARGAR ULTIMOS PRODUCTOS
   const $listaUltimosProductos = $('#last-products');
-  PRODUCTOS.map(producto => {
+  PRODUCTOS.map(({ id, img, titulo, descripcion, precio }) => {
     $listaUltimosProductos.append(
       `<li class="product">
-        <a href="/">
-          <img src="${producto.img}" alt="" />
+        <a href="./producto.html?id=${id}">
+          <img src="${img}" alt="" loading="lazy"/>
         </a>
-        <h3>${producto.titulo}</h3>
+        <h3>${titulo}</h3>
         <p>
-          ${producto.descripcion}
+          ${descripcion}
         </p>
         <div>
-          <span>$${producto.precio}</span>
+          <span>$${precio}</span>
           <button type="button">Agregar</button>
         </div>
       </li>`
@@ -86,18 +86,18 @@ $(() => {
 
   // CARGAR ULTIMAS OFERTAS
   const $listaUltimasOfertas = $('#last-offers');
-  PRODUCTOS.map(producto => {
+  PRODUCTOS.map(({ id, img, titulo, descripcion, precio }) => {
     $listaUltimasOfertas.append(
       `<li class="product">
-        <a href="/">
-          <img src="${producto.img}" alt="" />
+        <a href="./producto.html?id=${id}">
+          <img src="${img}" alt="" loading="lazy"/>
         </a>
-        <h3>${producto.titulo}</h3>
+        <h3>${titulo}</h3>
         <p>
-          ${producto.descripcion}
+          ${descripcion}
         </p>
         <div>
-          <span>$${producto.precio}</span>
+          <span>$${precio}</span>
           <button type="button">Agregar</button>
         </div>
       </li>`
