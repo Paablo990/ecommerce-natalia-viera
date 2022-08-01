@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Viera - Home</title>
+
+    <!-- estilos -->
+    <link rel="stylesheet" href="css/tailwindcss.css" />
+
+    <!-- scripts -->
+    <script src="js/jquery.js" defer></script>
+    <script src="js/producto.js" defer></script>
+  </head>
+  <body class="">
+    <!-- header -->
+    <header
+      class="sticky top-0 z-20 border-b border-natalia-gray-300 bg-red-400"
+    >
+      <nav class="container flex py-4">
+        <!-- logo -->
+        <a href="./index.html" class="my-auto flex h-8 flex-shrink-0">
+          <img
+            src="./assets/natalia-logo.svg"
+            alt="Logo Natalia Viera: seguridad corporal"
+            class="h-full"
+          />
+        </a>
+
+        <!-- menu -->
+        <button
+          type="button"
+          id="menu-boton"
+          class="ml-auto flex h-8 self-center sm:hidden"
+          aria-label="boton menu"
+        >
+          <img src="./assets/menu.svg" alt="hamburger menu" />
+        </button>
+        <ul
+          class="absolute top-[64px] -right-full hidden sm:relative sm:right-0 sm:top-0 sm:ml-auto sm:flex sm:items-center sm:gap-3 sm:text-xs sm:opacity-100 md:text-base"
+        >
+          <li>
+            <a href="#hero">Inicio</a>
+          </li>
+          <li>
+            <a href="/">Productos</a>
+          </li>
+          <li>
+            <a href="#contacto">Contacto</a>
+          </li>
+          <li>
+            <a href="" class="flex items-center gap-1" id="carrito">
+              <img
+                src="./assets/carrito.svg"
+                alt="carrito"
+                class="h-6"
+                aria-label="carrito"
+              />
+              <span class="font-bold">0</span>
+            </a>
+          </li>
+          <img
+            src="assets/nav-deco.svg"
+            alt=""
+            aria-hidden="true"
+            class="mx-2 h-8 w-2 min-w-min"
+          />
+
+          <li>
+            <a
+              href="/"
+              class="whitespace-nowrap rounded-md bg-natalia-blue-400 px-4 py-2 font-black uppercase text-white"
+            >
+              Iniciar Sesión
+            </a>
+          </li>
+          <li>
+            <a href="/" class="underline">Registro</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
