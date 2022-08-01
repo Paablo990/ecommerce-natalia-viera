@@ -14,22 +14,8 @@ html {
 }
 
 /* menu */
-#menu-boton.open + ul {
-  @apply absolute top-[64px] right-0 flex h-screen flex-col items-center gap-5 border-l border-natalia-gray-300 bg-white pt-6 text-center text-black opacity-100;
-}
-
-#menu-boton.open + ul > img {
+.cerrado {
   @apply hidden;
-}
-
-#menu-boton.open + ul > li {
-  @apply flex w-full px-2;
-}
-#menu-boton.open + ul > li > a {
-  @apply mx-auto w-full justify-center px-8 uppercase;
-}
-#menu-boton.open + ul > li:nth-last-child(1) > a {
-  @apply rounded-md border-4 border-natalia-blue-400 px-4 py-1 font-bold text-natalia-blue-400 no-underline;
 }
 
 /* products card */

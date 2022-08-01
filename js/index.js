@@ -52,16 +52,13 @@ const PRODUCTOS = [
 $(() => {
   // MENU HAMBURGUESA RESPONSIVE
   const $menuBoton = $('#menu-boton');
+  const $responsiveNavBar = $('#responsive-navbar');
   const $window = $(window);
 
   $menuBoton.on('click', () => {
-    if ($menuBoton.hasClass('open')) $menuBoton.removeClass('open');
-    else $menuBoton.addClass('open');
-  });
-
-  $window.on('resize', () => {
-    if ($window.width() < 620) return;
-    if ($menuBoton.hasClass('open')) $menuBoton.removeClass('open');
+    if ($responsiveNavBar.hasClass('cerrado'))
+      $responsiveNavBar.removeClass('cerrado');
+    else $responsiveNavBar.addClass('cerrado');
   });
 
   // CARGAR ULTIMOS PRODUCTOS
