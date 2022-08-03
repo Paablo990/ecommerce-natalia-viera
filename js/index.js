@@ -49,11 +49,26 @@ const PRODUCTOS = [
   },
 ];
 
+const renderProducto = ({ id, img, titulo, descripcion, precio }) => {
+  return `<li class="product">
+        <a href="./producto.html?id=${id}">
+          <img src="${img}" alt="" loading="lazy" class="product__img"/>
+        </a>
+        <h3 class="product__title">${titulo}</h3>
+        <p class="product__description">
+          ${descripcion}
+        </p>
+        <div class="product__wrapper">
+          <span>$${precio}</span>
+          <button type="button" class="product__button">Agregar</button>
+        </div>
+      </li>`;
+};
+
 $(() => {
   // MENU HAMBURGUESA RESPONSIVE
   const $menuBoton = $('#menu-boton');
   const $responsiveNavBar = $('#responsive-navbar');
-  const $window = $(window);
 
   $menuBoton.on('click', () => {
     if ($responsiveNavBar.hasClass('cerrado'))
@@ -63,41 +78,12 @@ $(() => {
 
   // CARGAR ULTIMOS PRODUCTOS
   const $listaUltimosProductos = $('#last-products');
-  PRODUCTOS.map(({ id, img, titulo, descripcion, precio }) => {
-    $listaUltimosProductos.append(
-      `<li class="product">
-        <a href="./producto.html?id=${id}">
-          <img src="${img}" alt="" loading="lazy"/>
-        </a>
-        <h3>${titulo}</h3>
-        <p>
-          ${descripcion}
-        </p>
-        <div>
-          <span>$${precio}</span>
-          <button type="button">Agregar</button>
-        </div>
-      </li>`
-    );
+  PRODUCTOS.map(producto => {
+    $listaUltimosProductos.append(renderProducto(producto));
   });
-
   // CARGAR ULTIMAS OFERTAS
   const $listaUltimasOfertas = $('#last-offers');
-  PRODUCTOS.map(({ id, img, titulo, descripcion, precio }) => {
-    $listaUltimasOfertas.append(
-      `<li class="product">
-        <a href="./producto.html?id=${id}">
-          <img src="${img}" alt="" loading="lazy"/>
-        </a>
-        <h3>${titulo}</h3>
-        <p>
-          ${descripcion}
-        </p>
-        <div>
-          <span>$${precio}</span>
-          <button type="button">Agregar</button>
-        </div>
-      </li>`
-    );
+  PRODUCTOS.map(producto => {
+    $listaUltimasOfertas.append(renderProducto(producto));
   });
 });

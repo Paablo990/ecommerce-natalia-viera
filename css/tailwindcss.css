@@ -1135,13 +1135,13 @@ html {
   }
 }
 
-.product img{
+.produc__img{
   -o-object-fit: cover;
      object-fit: cover;
   padding: 0.5rem;
 }
 
-.product h3{
+.product__title{
   position: relative;
   padding-bottom: 1rem;
   font-size: 1.125rem;
@@ -1150,7 +1150,7 @@ html {
   line-height: 1;
 }
 
-.product h3::before{
+.product__title::before{
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -1161,7 +1161,7 @@ html {
   background-color: rgb(217 217 217 / var(--tw-bg-opacity));
 }
 
-.product p{
+.product__description{
   padding-top: 1rem;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -1170,27 +1170,27 @@ html {
   color: rgb(72 72 72 / var(--tw-text-opacity));
 }
 
-.product div{
+.product__wrapper{
   display: flex;
   align-items: center;
   padding-top: 1rem;
 }
 
 @media (min-width: 768px){
-  .product div{
+  .product__wrapper{
     flex-direction: column;
     gap: 0.5rem;
   }
 }
 
 @media (min-width: 1280px){
-  .product div{
+  .product__wrapper{
     flex-direction: row;
     gap: 0px;
   }
 }
 
-.product div button{
+.product__button{
   margin-left: auto;
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;
@@ -1208,13 +1208,13 @@ html {
 }
 
 @media (min-width: 768px){
-  .product div button{
+  .product__button{
     margin-left: 0px;
   }
 }
 
 @media (min-width: 1280px){
-  .product div button{
+  .product__button{
     margin-left: auto;
   }
 }
@@ -1238,8 +1238,6 @@ html {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
-
-/* extra media querys */
 
 .before\:absolute::before{
   content: var(--tw-content);
