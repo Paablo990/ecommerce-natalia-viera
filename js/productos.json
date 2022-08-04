@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "img": "assets/products/producto1.jpg",
+    "titulo": "Producto 1 mega nashe",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700
+  },
+  {
+    "id": 1,
+    "img": "assets/products/producto1.jpg",
+    "titulo": "Producto 1 mega nashe",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700
+  },
+  {
+    "id": 1,
+    "img": "assets/products/producto1.jpg",
+    "titulo": "Producto 1 mega nashe",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700
+  },
+  {
+    "id": 1,
+    "img": "assets/products/producto1.jpg",
+    "titulo": "Producto 1 mega nashe",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700
+  },
+  {
+    "id": 1,
+    "img": "assets/products/producto1.jpg",
+    "titulo": "Producto 1 mega nashe",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700
+  },
+  {
+    "id": 1,
+    "img": "assets/products/producto1.jpg",
+    "titulo": "Producto 1 mega nashe",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700
+  }
+]

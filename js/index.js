@@ -1,54 +1,3 @@
-const PRODUCTOS = [
-  {
-    id: 1,
-    img: 'assets/products/producto1.jpg',
-    titulo: 'Producto 1 mega nashe',
-    descripcion:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-    precio: 700,
-  },
-  {
-    id: 1,
-    img: 'assets/products/producto1.jpg',
-    titulo: 'Producto 1 mega nashe',
-    descripcion:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-    precio: 700,
-  },
-  {
-    id: 1,
-    img: 'assets/products/producto1.jpg',
-    titulo: 'Producto 1 mega nashe',
-    descripcion:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-    precio: 700,
-  },
-  {
-    id: 1,
-    img: 'assets/products/producto1.jpg',
-    titulo: 'Producto 1 mega nashe',
-    descripcion:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-    precio: 700,
-  },
-  {
-    id: 1,
-    img: 'assets/products/producto1.jpg',
-    titulo: 'Producto 1 mega nashe',
-    descripcion:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-    precio: 700,
-  },
-  {
-    id: 1,
-    img: 'assets/products/producto1.jpg',
-    titulo: 'Producto 1 mega nashe',
-    descripcion:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...',
-    precio: 700,
-  },
-];
-
 const renderProducto = ({ id, img, titulo, descripcion, precio }) => {
   return `<li class="product">
         <a href="./producto.html?id=${id}">
@@ -65,25 +14,35 @@ const renderProducto = ({ id, img, titulo, descripcion, precio }) => {
       </li>`;
 };
 
-$(() => {
+$(async () => {
   // MENU HAMBURGUESA RESPONSIVE
   const $menuBoton = $('#menu-boton');
   const $responsiveNavBar = $('#responsive-navbar');
 
   $menuBoton.on('click', () => {
-    if ($responsiveNavBar.hasClass('cerrado'))
+    if ($responsiveNavBar.hasClass('cerrado')) {
       $responsiveNavBar.removeClass('cerrado');
-    else $responsiveNavBar.addClass('cerrado');
+    } else {
+      $responsiveNavBar.addClass('cerrado');
+    }
   });
+
+  const productos = await fetchProductos();
 
   // CARGAR ULTIMOS PRODUCTOS
   const $listaUltimosProductos = $('#last-products');
-  PRODUCTOS.map(producto => {
+  productos.map(producto => {
     $listaUltimosProductos.append(renderProducto(producto));
   });
+
   // CARGAR ULTIMAS OFERTAS
   const $listaUltimasOfertas = $('#last-offers');
-  PRODUCTOS.map(producto => {
+  productos.map(producto => {
     $listaUltimasOfertas.append(renderProducto(producto));
   });
 });
+
+async function fetchProductos() {
+  const response = await fetch(`/js/productos.json`);
+  return await response.json();
+}
