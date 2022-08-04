@@ -1,5 +1,10 @@
-const renderProducto = ({ id, img, titulo, descripcion, precio }) => {
-  return `<li class="product">
+const renderProducto = ({
+  id,
+  img,
+  titulo,
+  descripcion,
+  precio,
+}) => `<li class="product">
         <a href="./producto.html?id=${id}">
           <img src="${img}" alt="" loading="lazy" class="product__img"/>
         </a>
@@ -12,6 +17,10 @@ const renderProducto = ({ id, img, titulo, descripcion, precio }) => {
           <button type="button" class="product__button">Agregar</button>
         </div>
       </li>`;
+
+const fetchProductos = async () => {
+  const response = await fetch('/js/productos.json');
+  return response.json();
 };
 
 $(async () => {
@@ -31,18 +40,13 @@ $(async () => {
 
   // CARGAR ULTIMOS PRODUCTOS
   const $listaUltimosProductos = $('#last-products');
-  productos.map(producto => {
+  productos.forEach(producto => {
     $listaUltimosProductos.append(renderProducto(producto));
   });
 
   // CARGAR ULTIMAS OFERTAS
   const $listaUltimasOfertas = $('#last-offers');
-  productos.map(producto => {
+  productos.forEach(producto => {
     $listaUltimasOfertas.append(renderProducto(producto));
   });
 });
-
-async function fetchProductos() {
-  const response = await fetch(`/js/productos.json`);
-  return await response.json();
-}
