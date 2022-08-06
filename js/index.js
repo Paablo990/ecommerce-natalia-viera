@@ -1,25 +1,21 @@
-const renderProducto = ({
-  id,
-  img,
-  titulo,
-  descripcion,
-  precio,
-}) => `<li class="product">
-        <a href="./producto.html?id=${id}">
-          <img src="${img}" alt="" loading="lazy" class="product__img"/>
-        </a>
-        <h3 class="product__title">${titulo}</h3>
-        <p class="product__description">
-          ${descripcion}
-        </p>
-        <div class="product__wrapper">
-          <span>$${precio}</span>
-          <button type="button" class="product__button">Agregar</button>
-        </div>
-      </li>`;
+const renderProducto = ({ id, img, titulo, descripcion, precio }) => `
+<li class="product">
+  <a href="./producto.html?id=${id}">
+    <img src="../assets/products/${img}" alt="" loading="lazy"  class="product__img"/>
+  </a>
+  <div>
+    <h3 class="product__title">${titulo}</h3>
+    <p class="product__description">${descripcion}</p>
+    <div class="product__wrapper">
+      <span>$${precio}</span>
+      <button type="button" class="product__button">Agregar</button>
+    </div>
+  <div/>
+</li>
+`;
 
 const fetchProductos = async () => {
-  const response = await fetch('/js/productos.json');
+  const response = await fetch('../js/productos.json');
   return response.json();
 };
 

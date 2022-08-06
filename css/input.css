@@ -19,16 +19,21 @@ html {
 }
 
 /* products card */
+
 .product {
-  @apply relative max-w-[70%] transform place-self-center border border-natalia-gray-300 bg-white p-4 transition-all focus-within:-translate-y-2 focus-within:shadow-xl hover:-translate-y-2 hover:shadow-xl sm:max-w-[12em] md:place-self-auto;
+  @apply flex transform border border-natalia-gray-300 bg-white pr-4 pb-4 pt-4 transition-all focus-within:-translate-y-2 focus-within:shadow-md hover:-translate-y-2 hover:shadow-md sm:flex-col sm:p-2;
 }
 
 .produc__img {
-  @apply object-cover p-2;
+  @apply object-cover;
+}
+
+.product > a {
+  @apply max-w-[40%] p-2 sm:max-w-none;
 }
 
 .product__title {
-  @apply relative pb-4 text-lg font-bold leading-none before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:bg-natalia-gray-300;
+  @apply relative block pb-4 text-2xl font-bold leading-none before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:bg-natalia-gray-300 sm:text-xl;
 }
 
 .product__description {
