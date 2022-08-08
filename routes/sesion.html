@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Viera - Home</title>
+
+    <!-- estilos -->
+    <link rel="stylesheet" href="../css/tailwindcss.css" />
+
+    <!-- scripts -->
+    <script src="../js/jquery.js" defer></script>
+    <!-- <script src="../js/index.js" defer></script> -->
+  </head>
+
+  <body class="overflow-x-hidden antialiased">
+    <!-- header -->
+    <header
+      class="fixed top-0 left-0 z-30 w-full border-b border-natalia-gray-300 bg-white py-3"
+    >
+      <div class="container flex">
+        <!-- logo -->
+        <a href="#inicio" class="">
+          <img
+            src="../assets/natalia-logo.svg"
+            alt="logo natalia viera"
+            class="h-8"
+          />
+        </a>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main
+      class="grid h-screen place-items-center bg-gradient-to-br from-natalia-blue-400 to-natalia-lightblue-400"
+    >
+      <form class="border border-natalia-gray-300 bg-white px-4 py-8">
+        <h1 class="text-4xl font-black uppercase">Iniciar Sesión</h1>
+
+        <!-- correo -->
+        <label for="correo">Correo Electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="correoejemplo@gmail.com..."
+          class=""
+        />
+        <small id="error_correo">Error mail no valido</small>
+
+        <!-- ingresar -->
+        <button type="submit" id="btn-ingresar">Ingresar</button>
+        <a href="registro.html">No tienes cuenta? crea una clickeando aqui!</a>
+      </form>
+    </main>
+  </body>
+</html>

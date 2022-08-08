@@ -1,59 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap');
-
 @tailwind base;
 @tailwind components;
+
+.cta {
+  @apply transform bg-natalia-blue-400 px-5 py-2 font-bold uppercase text-white transition-all hover:scale-105 focus:scale-105 active:bg-natalia-blue-500;
+}
+
+.nav-link {
+  @apply w-full py-2 pl-6 font-semibold hover:bg-gray-100 focus:bg-gray-100 sm:px-3;
+}
+
+.cta.product {
+  @apply px-3 py-2 text-xs;
+}
+
+.article-title {
+  @apply relative w-max transform text-xl font-black uppercase tracking-wider 
+  before:absolute before:-bottom-1 before:left-0 before:h-1 
+  before:w-full before:origin-right before:scale-x-0 before:bg-natalia-blue-400
+ before:transition-transform before:duration-300 hover:before:origin-left
+  hover:before:scale-x-100 sm:text-2xl;
+}
+
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1516216628859-9bccecab13ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80');
+}
+
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 64px;
+.deco-horizontal {
+  @apply before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:bg-gray-300;
 }
 
-.hero-img {
-  background-image: url('../assets/hero-picture.jpg');
+#primary-nav[data-visible='true'] {
+  @apply inline translate-x-0;
 }
 
-/* menu */
-.cerrado {
-  @apply hidden;
-}
-
-/* products card */
-
-.product {
-  @apply flex transform border border-natalia-gray-300 bg-white pr-4 pb-4 pt-4 transition-all focus-within:-translate-y-2 focus-within:shadow-md hover:-translate-y-2 hover:shadow-md sm:flex-col sm:p-2;
-}
-
-.produc__img {
-  @apply object-cover;
-}
-
-.product > a {
-  @apply max-w-[40%] p-2 sm:max-w-none;
-}
-
-.product__title {
-  @apply relative block pb-4 text-2xl font-bold leading-none before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:bg-natalia-gray-300 sm:text-xl;
-}
-
-.product__description {
-  @apply pt-4 text-xs leading-relaxed text-natalia-gray-400;
-}
-
-.product__wrapper {
-  @apply flex items-center pt-4 md:flex-col md:gap-2 xl:flex-row xl:gap-0;
-}
-
-.product__button {
-  @apply ml-auto rounded-md bg-natalia-blue-400 px-3 py-2 text-xs font-black uppercase text-white md:ml-0 xl:ml-auto;
-}
-
-/* input */
-.input {
-  @apply rounded-md border border-black p-2;
-}
-
-/* input error */
-.input-error {
-  @apply mb-2 text-xs text-red-500;
+@media (min-width: 640px) {
+  #primary-nav[data-visible='false'] {
+    @apply inline translate-x-0;
+  }
 }
