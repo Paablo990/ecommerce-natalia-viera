@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "imgs": {
+      "img1":"producto1.jpg",
+      "img2":"producto1.jpg",
+      "img3":"producto1.jpg"
+    },
+    "titulo": "Producto 1 mega nashe, Producto 1 mega nashe, Producto 1 mega nashe ",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700,
+    "descuento":3
+  },
+  {
+    "id": 1,
+    "imgs": {
+      "img1":"producto1.jpg",
+      "img2":"producto1.jpg",
+      "img3":"producto1.jpg"
+    },
+    "titulo": "Producto 1 mega nashe, Producto 1 mega nashe, Producto 1 mega nashe ",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700,
+    "descuento":15
+  },
+  {
+    "id": 1,
+    "imgs": {
+      "img1":"producto1.jpg",
+      "img2":"producto1.jpg",
+      "img3":"producto1.jpg"
+    },
+    "titulo": "Producto 1 mega nashe, Producto 1 mega nashe, Producto 1 mega nashe ",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700,
+    "descuento":50
+  },
+  {
+    "id": 1,
+    "imgs": {
+      "img1":"producto1.jpg",
+      "img2":"producto1.jpg",
+      "img3":"producto1.jpg"
+    },
+    "titulo": "Producto 1 mega nashe, Producto 1 mega nashe, Producto 1 mega nashe ",
+    "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
+    "precio": 700,
+    "descuento":30
+  }
+]

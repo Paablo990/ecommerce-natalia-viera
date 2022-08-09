@@ -5,7 +5,7 @@
     "titulo": "Producto 1 mega nashe",
     "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
     "precio": 700,
-    "descuento":0
+    "descuento":30
   },
   {
     "id": 1,
@@ -13,7 +13,7 @@
     "titulo": "Producto 1 mega nashe",
     "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
     "precio": 700,
-    "descuento":0
+    "descuento":20
   },
   {
     "id": 1,
@@ -21,7 +21,7 @@
     "titulo": "Producto 1 mega nashe",
     "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
     "precio": 700,
-    "descuento":0
+    "descuento":30
   },
   {
     "id": 1,
@@ -29,7 +29,7 @@
     "titulo": "Producto 1 mega nashe",
     "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
     "precio": 700,
-    "descuento":0
+    "descuento":40
   },
   {
     "id": 1,
@@ -37,7 +37,7 @@
     "titulo": "Producto 1 mega nashe",
     "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
     "precio": 700,
-    "descuento":0
+    "descuento":23
   },
   {
     "id": 1,
@@ -45,6 +45,6 @@
     "titulo": "Producto 1 mega nashe",
     "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit Eaque placeat  labore...",
     "precio": 700,
-    "descuento":0
+    "descuento":20
   }
 ]
