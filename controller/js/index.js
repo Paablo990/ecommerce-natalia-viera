@@ -7,7 +7,7 @@ const renderProducto = producto => {
     class="flex transform border border-gray-300 bg-white pr-4 pb-4 pt-4 transition-all focus-within:-translate-y-2 focus-within:shadow-md hover:-translate-y-2 hover:shadow-md sm:flex-col sm:p-2">
     <a href="#" class="max-w-[40%] p-2 sm:max-w-none">
       <img
-        src="../assets/products/${img}"
+        src="./assets/products/${img}"
         alt="${titulo}" loading="lazy" class="object-cover h-full" />
     </a>
     <div>
@@ -43,22 +43,21 @@ const renderPaquetes = paquete => {
   const precioFinal = precio - (precio * descuento) / 100;
 
   return `<li
-    class="border border-gray-300 transition-all focus-within:-translate-y-2 focus-within:shadow-md hover:-translate-y-2 hover:shadow-md"
-  >
+    class="border border-gray-300 transition-all focus-within:-translate-y-2 focus-within:shadow-md hover:-translate-y-2 hover:shadow-md">
     <a href="#" class="grid grid-cols-3 grid-rows-2">
       <img
         class="col-span-2 row-span-2 h-full border-gray-300 object-cover p-2"
-        src="../assets/products/${img1}"
+        src="./assets/products/${img1}"
         alt="${titulo}"
       />
       <img
         class="col-start-3 border-gray-300 object-cover p-2"
-        src="../assets/products/${img2}"
+        src="./assets/products/${img2}"
         alt="${titulo}"
       />
       <img
         class="col-start-3 border-gray-300 object-cover p-2"
-        src="../assets/products/${img3}"
+        src="./assets/products/${img3}"
         alt="${titulo}"
       />
     </a>
@@ -86,28 +85,17 @@ const renderPaquetes = paquete => {
   </li>`;
 };
 
-const fetchProductos = async () => {
-  const response = await fetch('../js/productos.json');
-  return response.json();
-};
-const fetchProductosEnOferta = async () => {
-  const response = await fetch('../js/productos-oferta.json');
-  return response.json();
-};
-const fetchPaquetes = async () => {
-  const response = await fetch('../js/paquetes.json');
-  return response.json();
-};
-const fetchPaquetesEnOferta = async () => {
-  const response = await fetch('../js/paquetes-oferta.json');
-  return response.json();
-};
+const fetchData = async () =>
+  Promise.all([
+    (await fetch('./../controller/js/productos.json')).json(),
+    (await fetch('./../controller/js/productos-oferta.json')).json(),
+    (await fetch('./../controller/js/paquetes.json')).json(),
+    (await fetch('./../controller/js/paquetes-oferta.json')).json(),
+  ]);
 
 $(async () => {
-  const productos = await fetchProductos();
-  const productosOferta = await fetchProductosEnOferta();
-  const paquetes = await fetchPaquetes();
-  const paquetesOferta = await fetchPaquetesEnOferta();
+  const [productos, productosOferta, paquetes, paquetesOferta] =
+    await fetchData();
 
   const $productos = $('#last-products');
   $productos.html(productos.map(producto => renderProducto(producto)).join(''));
