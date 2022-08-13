@@ -1,5 +1,5 @@
-const $primaryNav = $('#primary-nav');
-const $buttonNav = $('#toggle-nav');
+const $primaryNav = $('#nav');
+const $buttonNav = $('#nav-button');
 
 $buttonNav.on('click', () => {
   const state = $primaryNav.attr('data-visible');

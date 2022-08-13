@@ -107,6 +107,7 @@ $(async () => {
 
   const $paquetes = $('#last-packs');
   $paquetes.html(paquetes.map(paquete => renderPaquetes(paquete)).join(''));
+
   const $paquetesOferta = $('#offer-packs');
   $paquetesOferta.html(
     paquetesOferta.map(paquete => renderPaquetes(paquete)).join('')

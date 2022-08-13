@@ -5,8 +5,15 @@
   @apply transform bg-natalia-blue-400 px-5 py-2 font-bold uppercase text-white transition-all hover:scale-105 focus:scale-105 active:bg-natalia-blue-500;
 }
 
+.nav-item {
+  @apply flex md:items-center;
+}
+
 .nav-link {
-  @apply w-full py-2 pl-6 font-semibold hover:bg-gray-100 focus:bg-gray-100 sm:px-3;
+  @apply w-full py-3 px-6 hover:font-semibold hover:transform hover:scale-105 focus:font-semibold focus:transform focus:scale-105 transition-transform md:py-0 md:px-4 md:hover:scale-100 md:focus:scale-100;
+}
+.nav-link.accent {
+  @apply uppercase font-bold text-white bg-natalia-blue-400 hover:bg-natalia-blue-500 hover:scale-100 focus:scale-100  transition-colors md:h-full md:items-center md:flex;
 }
 
 .cta.product {
@@ -35,12 +42,12 @@ input {
   @apply before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:bg-gray-300;
 }
 
-#primary-nav[data-visible='true'] {
-  @apply inline translate-x-0;
+ul[data-visible="false"] {
+  @apply translate-x-full;
 }
 
-@media (min-width: 640px) {
-  #primary-nav[data-visible='false'] {
-    @apply inline translate-x-0;
+@media (min-width: 768px) {
+  ul[data-visible="false"] {
+    @apply translate-x-0 ;
   }
 }

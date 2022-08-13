@@ -17,47 +17,50 @@
   </head>
 
   <body class="overflow-x-hidden">
-    <header
-      class="sticky top-0 left-0 z-40 border-b border-gray-300 bg-white text-gray-900 sm:text-xs md:text-base"
-    >
-      <div
-        class="sm:px-auto container relative mx-auto flex items-center py-4 px-[1em] sm:py-4"
-      >
-        <a href="#inicio" class="flex h-8 flex-shrink-0">
+    <header class="sticky top-0 z-30 border-b border-gray-300 bg-white">
+      <div class="container mx-auto flex">
+        <a class="flex py-2" href="#">
           <img
+            class="h-8"
             src="./assets/natalia-logo.svg"
-            alt="Logo Natalia Viera: seguridad corporal"
-            class="h-full"
+            alt="logo natialia viera"
           />
         </a>
-        <button id="toggle-nav" class="relative z-50 ml-auto pr-2 sm:hidden">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <nav
-          id="primary-nav"
-          data-visible="false"
-          class="absolute top-0 right-0 bottom-0 left-1/3 z-40 hidden h-screen translate-x-full transform border bg-white transition-transform sm:relative sm:top-auto sm:bottom-auto sm:left-auto sm:right-auto sm:ml-auto sm:h-auto sm:border-none"
+
+        <button
+          class="relative z-40 ml-auto flex items-center justify-center md:hidden"
+          id="nav-button"
+          type="button"
         >
-          <ul
-            class="z-40 mt-32 flex h-full flex-col overflow-x-hidden sm:mt-0 sm:flex-row sm:overflow-visible"
-          >
-            <li class="flex"><a href="#" class="nav-link">Inicio</a></li>
-            <li class="flex"><a href="#" class="nav-link">Productos</a></li>
-            <li class="flex"><a href="#" class="nav-link">Contacto</a></li>
-            <li class="flex">
-              <a href="#" class="nav-link flex items-center gap-1">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                2
-              </a>
-            </li>
-            <li class="flex">
-              <a href="#" class="cta relative w-full sm:w-max"
-                >Iniciar Sesión</a
-              >
-            </li>
-            <li class="flex"><a href="#" class="nav-link">Registrarse</a></li>
-          </ul>
-        </nav>
+          <img src="./assets/menu.svg" alt="" />
+        </button>
+
+        <!-- nav -->
+        <ul
+          class="absolute top-0 bottom-0 right-0 left-1/3 z-30 flex h-screen transform flex-col overflow-x-hidden border-l border-gray-300 bg-white shadow-md md:relative md:top-auto md:bottom-auto md:right-auto md:left-auto md:ml-auto md:h-auto md:flex-row md:border-none md:text-sm md:shadow-none"
+          id="nav"
+          data-visible="false"
+        >
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Inicio </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Productos </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Contacto </a>
+          </li>
+          <div
+            class="mx-6 my-4 h-px w-full bg-gray-300 md:hidden"
+            aria-hidden="true"
+          ></div>
+          <li class="nav-item">
+            <a class="nav-link accent" href="#"> Iniciar Sesión </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pr-0" href="#"> Registrarse </a>
+          </li>
+        </ul>
       </div>
     </header>
 
@@ -231,6 +234,85 @@
         </form>
       </section>
     </main>
+
+    <!-- para que se cargen bien los estilos -->
+    <div class="hidden">
+      <li
+        class="flex transform border border-gray-300 bg-white pr-4 pb-4 pt-4 transition-all focus-within:-translate-y-2 focus-within:shadow-md hover:-translate-y-2 hover:shadow-md sm:flex-col sm:p-2"
+      >
+        <a href="#" class="max-w-[40%] p-2 sm:max-w-none">
+          <img
+            src="./"
+            alt="${titulo}"
+            loading="lazy"
+            class="h-full object-cover"
+          />
+        </a>
+        <div>
+          <h4
+            class="deco-horizontal before:bg-natalia-gray-300 relative block pb-4 text-2xl font-bold leading-none before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full sm:text-xl"
+          >
+            ${titulo}
+          </h4>
+          <p class="pt-4 text-xs leading-relaxed text-gray-600">
+            ${descripcion}
+          </p>
+          <div
+            class="flex items-center justify-between pt-4 md:flex-col md:gap-2 xl:flex-row xl:gap-0"
+          >
+            <span class="relative font-semibold">
+              $${precioFinal} ${ descuento > 0 ? `<span
+                class="absolute -top-2 -right-2 whitespace-nowrap text-xs text-red-500 line-through"
+                >$${precio}</span
+              >` : `` }
+            </span>
+            <button id="producto-${id}" type="button" class="cta product">
+              Agregar
+            </button>
+          </div>
+        </div>
+      </li>
+      <li
+        class="border border-gray-300 transition-all focus-within:-translate-y-2 focus-within:shadow-md hover:-translate-y-2 hover:shadow-md"
+      >
+        <a href="#" class="grid grid-cols-3 grid-rows-2">
+          <img
+            class="col-span-2 row-span-2 h-full border-gray-300 object-cover p-2"
+            src="./"
+            alt="${titulo}"
+          />
+          <img
+            class="col-start-3 border-gray-300 object-cover p-2"
+            src="./"
+            alt="${titulo}"
+          />
+          <img
+            class="col-start-3 border-gray-300 object-cover p-2"
+            src="./"
+            alt="${titulo}"
+          />
+        </a>
+        <div class="p-2">
+          <h4 class="deco-horizontal relative pb-3 text-xl font-bold">
+            ${titulo}
+          </h4>
+          <p class="mt-3 text-xs leading-relaxed text-gray-600">
+            ${descripcion}
+          </p>
+          <div class="flex items-center justify-between pt-4">
+            <span class="relative font-semibold">
+              $${precioFinal} ${ descuento > 0 ? `<span
+                class="absolute -top-2 -right-2 whitespace-nowrap text-xs text-red-500 line-through"
+                >$${precio}</span
+              >` : `` }
+            </span>
+            <button id="paquete-${id}" type="button" class="cta product">
+              Agregar
+            </button>
+          </div>
+        </div>
+      </li>
+    </div>
 
     <footer class="bg-black py-4">
       <div class="container mx-auto">
