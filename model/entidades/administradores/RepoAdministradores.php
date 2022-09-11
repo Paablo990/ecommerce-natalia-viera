@@ -55,11 +55,9 @@ class RepoAdministradores
     $administradores = [];
 
     foreach ($querys as $query) {
-      $aux_administradores[] = $this->database->queryWithoutParams(
+      $administradores  = array_merge($administradores, $this->database->queryWithoutParams(
         $query
-      )[0];
-
-      $administradores = array_merge($administradores, $aux_administradores);
+      ));
     }
 
     return $administradores;
@@ -167,7 +165,7 @@ class RepoAdministradores
       throw new Exception("Ya hay administradores con esa ci", 409);
     }
 
-    $query = "UPDATE USUARIOS SET `ci`=?, `nombre_1`=?, `nombre_2`=?, `apellido_1`=?, `apellido_2`=?, `correo`=?, `contra`=? WHERE `id_usuario`=?";
+    $query = "UPDATE USUARIOS SET `ci`=?, `nombre_1`=?, `nombre_2`=?, `apellido_1`=?, `apellido_2`=?, `correo`=? WHERE `id_usuario`=?";
 
     $this->database->updateOrDeleteRow(
       $query,
@@ -178,10 +176,9 @@ class RepoAdministradores
         $nuevo_administrador["apellido_1"],
         $nuevo_administrador["apellido_2"],
         $nuevo_administrador["correo"],
-        $nuevo_administrador["contra"],
         $id_administrador
       ],
-      "sssssssi"
+      "ssssssi"
     );
 
     $query = "DELETE FROM CELULARES_USUARIOS WHERE `id_usuario`=?";

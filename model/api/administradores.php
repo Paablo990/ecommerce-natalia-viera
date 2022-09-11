@@ -39,7 +39,7 @@ try {
     $_SERVER["REQUEST_METHOD"] == "POST" &&
     isset($_GET["jefe"])
   ) {
-    $nuevo_jefe = $_POST["jefe"];
+    $nuevo_jefe = $_POST["administrador"];
 
     $respuesta = $api_administradores->post(
       $nuevo_jefe,
@@ -54,7 +54,7 @@ try {
     $_SERVER["REQUEST_METHOD"] == "POST" &&
     isset($_GET["comprador"])
   ) {
-    $nuevo_comprador = $_POST["comprador"];
+    $nuevo_comprador = $_POST["administrador"];
 
     $respuesta = $api_administradores->post(
       $nuevo_comprador,
@@ -69,7 +69,7 @@ try {
     $_SERVER["REQUEST_METHOD"] == "POST" &&
     isset($_GET["vendedor"])
   ) {
-    $nuevo_vendedor = $_POST["vendedor"];
+    $nuevo_vendedor = $_POST["administrador"];
 
     $respuesta = $api_administradores->post(
       $nuevo_vendedor,
@@ -103,7 +103,7 @@ try {
     $id_administrador = $_GET["id"];
 
     $respuesta = $api_administradores->delete(
-      $nuevo_administrador
+      $id_administrador
     );
 
     echo $respuesta;

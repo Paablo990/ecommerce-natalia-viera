@@ -66,7 +66,6 @@ $(async () => {
     };
 
     const { mensaje } = (await postProductoToApi(producto)).data;
-
     $('#resultado').html(mensaje);
   });
 
