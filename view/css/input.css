@@ -51,3 +51,15 @@ ul[data-visible="false"] {
     @apply translate-x-0 ;
   }
 }
+
+table {
+  border-collapse: collapse;
+}
+
+th, tr, td{
+  @apply border border-black p-2;
+}
+
+td > button {
+  @apply px-3 py-1 border border-black;
+}

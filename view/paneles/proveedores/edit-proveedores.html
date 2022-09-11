@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Viera - Home</title>
+
+    <!-- estilos -->
+    <link rel="stylesheet" href="../../css/tailwindcss.css" />
+    <script src="https://use.fontawesome.com/2d65f67246.js"></script>
+
+    <!-- scripts -->
+    <script src="../../../controller/js/jquery.js" defer></script>
+    <script
+      src="../../../controller/js/proveedores/edit-proveedores.js"
+      defer
+    ></script>
+  </head>
+  <body class="text-gray-900">
+    <section class="container mx-auto overflow-hidden py-16">
+      <h1 class="text-5xl font-black">
+        Panel <span class="text-natalia-blue-400">Productos</span>
+      </h1>
+
+      <!-- editar -->
+      <article class="mt-4">
+        <form
+          id="edit-form"
+          class="relative grid grid-cols-3 gap-2 border border-gray-300 py-6 px-6 pt-6"
+        >
+          <h2 class="py-2 text-4xl font-bold uppercase text-gray-300">
+            Editar
+          </h2>
+
+          <input type="hidden" class="hidden" disabled id="edit-id" />
+
+          <!-- nombre -->
+          <div class="col-span-full flex flex-col gap-2">
+            <label for="edit-nombre">Nombre</label>
+            <input type="text" id="edit-nombre" required />
+          </div>
+          <!-- correo -->
+          <div class="col-span-full flex flex-col gap-2">
+            <label for="edit-nombre">correo</label>
+            <input type="email" id="edit-correo" required />
+          </div>
+          <!-- direccion -->
+          <div class="col-span-full flex flex-col gap-2">
+            <label for="edit-direccion">Direccion</label>
+            <input type="text" id="edit-direccion" required />
+          </div>
+          <!-- nro puerta -->
+          <div class="col-span-full flex flex-col gap-2">
+            <label for="edit-nropuerta">Numero Puerta</label>
+            <input type="text" id="edit-nropuerta" required />
+          </div>
+          <!-- telefono -->
+          <div class="col-span-full flex flex-col gap-2">
+            <label for="edit-telefono">Telefono</label>
+            <input type="number" id="edit-telefono" required />
+          </div>
+
+          <button
+            type="submit"
+            class="col-span-2 mt-12 bg-natalia-blue-400 py-2 text-lg font-bold uppercase text-white"
+          >
+            Aceptar
+          </button>
+          <button
+            class="mt-12 border border-natalia-blue-400 bg-white py-2 text-lg font-bold uppercase text-natalia-blue-400"
+            type="button"
+          >
+            Limpiar
+          </button>
+        </form>
+
+        <p
+          id="resultado"
+          class="mt-12 text-lg font-bold uppercase text-green-700"
+        ></p>
+      </article>
+
+      <!-- mostrar -->
+      <article class="mt-4">
+        <table class="w-full table-auto overflow-x-scroll">
+          <thead class="bg-natalia-blue-400 uppercase text-white">
+            <tr>
+              <th>id</th>
+              <th>nombre</th>
+              <th>correo</th>
+              <th>direccion</th>
+              <th>nro puerta</th>
+              <th>telefono</th>
+              <th>editar</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-proveedores"></tbody>
+        </table>
+      </article>
+    </section>
+  </body>
+</html>
