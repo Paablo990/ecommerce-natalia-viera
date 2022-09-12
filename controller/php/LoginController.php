@@ -1,30 +1,36 @@
 <?php
 
-include_once('DBController.php');
-include_once('Validaciones.php');
+require_once __DIR__ . "/../../model/entidades/database/Database.php";
+require_once __DIR__ . "/../../model/entidades/administradores/RepoAdministradores.php";
+
+$db = new Database();
+$ra = new RepoAdministradores();
 
 $correo = $_POST['correo'];
 $contra = $_POST['contra'];
 
-// TODO: sacar esto de aca (validar en js)
-if (inputsVacios(array($correo, $contra))) return header('Location: ../login.html');
+$query = "SELECT contra, id_usuario FROM USUARIOS WHERE correo=?";
 
-$rango = existeUsuarioEnDB($correo, $contra);
+$resultado = $db->queryWithParams(
+  $query,
+  [$correo],
+  "s"
+)[0] ?? null;
 
-// TODO: sacar esto de aca (validar en js)
-if ($rango == 'ERROR') return header('Location: ../login.html');
+if ($resultado == null) {
+  header('Location: ../../view/login.html');
+}
+$id = $resultado["id_usuario"];
+$contra_hash = $resultado["contra"];
 
-switch ($rango) {
-  case 'JEFE':
-    header('Location: ../prueba/jefe.html');
-    break;
-  case 'VENDEDOR':
-    header('Location: ../prueba/vendedor.html');
-    break;
-  case 'COMPRADOR':
-    header('Location: ../prueba/comprador.html');
-    break;
-  default:
-    header('Location: ../prueba/cliente.html');
-    break;
+if (!password_verify($contra, $contra_hash)) {
+  header('Location: ../../view/login.html');
+}
+
+$rango = $ra->rolAdministradorConId($id);
+
+if ($rango == "Cliente") {
+  header('Location: ../../view/home.html');
+} else {
+  header('Location: ../../view/roles/administradores.html');
 }
