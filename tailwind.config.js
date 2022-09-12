@@ -2,7 +2,12 @@ const forms = require('@tailwindcss/forms');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./view/*/*.html', '.controller/js/*.js', '.view/*/*.html'],
+  content: [
+    './view/*/*.html',
+    '.controller/js/*.js',
+    './view/*/*/*.html',
+    './view/*',
+  ],
   theme: {
     extend: {
       colors: {
