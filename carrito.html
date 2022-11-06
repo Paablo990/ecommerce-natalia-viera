@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Viera - Carrito</title>
+    <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/carrito.js" defer type="module"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./">Natalia Viera</a>
+      <nav>
+        <ul id="menu">
+          <li><a href="./">Inicio</a></li>
+          <li><a href="./productos.html">Productos</a></li>
+          <li><a href="./inicio-de-sesion.html">Carrito</a></li>
+          <li><a href="./inicio-de-sesion.html">Iniciar Sesión</a></li>
+          <li><a href="./registro.html">Registrarse</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Carrito</h1>
+
+      <div>
+        <ul id="lista-productos"></ul>
+      </div>
+      <div>
+        <p>Total: <span id="total">...</span></p>
+        <button id="abrir-dialogo" disabled>Comprar</button>
+      </div>
+
+      <dialog id="dialog">
+        <button type="button" id="cerrar-dialogo">X</button>
+        <form id="compra">
+          <div>
+            <label for="nombre">Nombre del Titular:</label>
+            <input type="text" name="nombre" id="nombre" required />
+          </div>
+
+          <div>
+            <label for="apellido">Apellido del Titular:</label>
+            <input type="text" name="apellido" id="apellido" required />
+          </div>
+
+          <div>
+            <label for="tarjeta">Numero de Tarjeta:</label>
+            <input type="number" name="tarjeta" id="tarjeta" required />
+
+            <label for="codigo">Codigo de Seguridad:</label>
+            <input type="number" name="codigo" id="codigo" required />
+          </div>
+
+          <button type="submit">Aceptar</button>
+          <button type="reset">Limpiar</button>
+        </form>
+
+        <p id="resultado"></p>
+      </dialog>
+    </main>
+  </body>
+</html>

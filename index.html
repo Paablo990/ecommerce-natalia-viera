@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Viera - Inicio</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/index.js" defer type="module"></script>
+  </head>
+  <body class="text-gray-900">
+    <header class="sticky top-0 left-0 border-b border-gray-300 bg-white z-50">
+      <div class="container mx-auto flex">
+        <a href="./" class="py-2">
+          <img
+            src="./img/assets/natalia-logo.svg"
+            alt="Logo natalia viera"
+            class="h-9"
+          />
+        </a>
+        <nav class="hidden md:flex ml-auto">
+          <ul
+            id="menu"
+            class="flex-col md:flex-row gap-5 flex h-full md:items-center md:gap-1"
+          >
+            <li><a class="p-2" href="./">Inicio</a></li>
+            <li><a class="p-2" href="./productos.html">Productos</a></li>
+            <li></li>
+            <li><a class="p-2" href="./productos.html">Paquetes</a></li>
+            <li>
+              <a class="p-2" href="./inicio-de-sesion.html">Carrito</a>
+            </li>
+            <li>
+              <a class="cta" href="./inicio-de-sesion.html">Iniciar Sesión</a>
+            </li>
+            <li>
+              <a class="cta" href="./registro.html">Registrarse</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="border-gray-300 relative border-b" id="inicio">
+        <div
+          class="container mx-auto flex gap-12 overflow-y-hidden py-16 md:py-32"
+        >
+          <div class="md:3/4 lg:w-2/4">
+            <h1 class="text-5xl font-black leading-none">
+              Todo en
+              <span
+                class="bg-gradient-to-tl from-natalia-blue-400 to-natalia-blue-300 bg-clip-text text-transparent"
+                >seguridad corporal</span
+              >
+              al mejor precio del mercado.
+            </h1>
+            <p class="py-6 leading-relaxed text-gray-600">
+              En nuestra tienda encontraras los mejores equipos de seguridad
+              personal de todo el mercado, para trabajar de forma segura de
+              parte de las marcas lideres en el rubro.
+            </p>
+            <a href="./productos.html" class="cta inline-block">
+              Nuestros productos
+            </a>
+          </div>
+        </div>
+        <div
+          class="hero md:1/4 absolute top-0 right-0 hidden h-full bg-cover bg-bottom md:flex lg:w-2/4"
+        ></div>
+      </section>
+
+      <section class="container mx-auto border-b border-gray-300">
+        <article class="py-2">
+          <div class="flex h-full py-2">
+            <h2 class="uppercase font-black text-2xl">Ultimos Productos</h2>
+            <a
+              class="ml-auto items-center text-natalia-blue-400"
+              href="./productos.html"
+              >ver mas...</a
+            >
+          </div>
+
+          <ul
+            class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-3 lg:grid-cols-6 lg:gap-1"
+            id="ultimos-productos"
+          ></ul>
+        </article>
+
+        <article class="py-2">
+          <div class="flex h-full py-2">
+            <h2 class="uppercase font-black text-2xl">Ultimos Paquetes</h2>
+            <a
+              class="ml-auto items-center text-natalia-blue-400"
+              href="./paquetes.html"
+              >ver mas...</a
+            >
+          </div>
+
+          <ul
+            class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-3 lg:grid-cols-6 lg:gap-1"
+            id="ultimos-paquetes"
+          ></ul>
+        </article>
+
+        <article class="py-2">
+          <div class="flex h-full py-2">
+            <h2 class="uppercase font-black text-2xl">Productos en Oferta</h2>
+            <a
+              class="ml-auto items-center text-natalia-blue-400"
+              href="./productos.html"
+              >ver mas...</a
+            >
+          </div>
+
+          <ul
+            class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-3 lg:grid-cols-6 lg:gap-1"
+            id="productos-oferta"
+          ></ul>
+        </article>
+
+        <article class="py-2">
+          <div class="flex h-full py-2">
+            <h2 class="uppercase font-black text-2xl">Paquetes en Oferta</h2>
+            <a
+              class="ml-auto items-center text-natalia-blue-400"
+              href="./paquetes.html"
+              >ver mas...</a
+            >
+          </div>
+
+          <ul
+            class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-3 lg:grid-cols-6 lg:gap-1"
+            id="paquetes-oferta"
+          ></ul>
+        </article>
+      </section>
+
+      <hr />
+    </main>
+  </body>
+</html>

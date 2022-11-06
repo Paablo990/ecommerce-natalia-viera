@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Viera - Inicio de Sesion</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/inicio-de-sesion.js" defer type="module"></script>
+  </head>
+  <body class="text-gray-900 h-full">
+    <header class="bg-white left-0 right-0 border-b border-gray-300">
+      <div class="container mx-auto flex">
+        <a href="./" class="py-2">
+          <img
+            src="./img/assets/natalia-logo.svg"
+            alt="Logo natalia viera"
+            class="h-9"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main class="h-full grid place-items-center">
+      <div class="container mx-auto">
+        <form
+          class="flex flex-col py-16 border border-gray-300 px-8 max-w-md gap-2 mx-auto"
+          id="inicio-de-sesion"
+        >
+          <h1 class="text-5xl font-black">Inicio de Sesion</h1>
+
+          <div class="flex flex-col mt-8">
+            <label for="correo">Correo:</label>
+            <input type="email" name="correo" id="correo" required />
+          </div>
+
+          <div class="flex flex-col">
+            <label for="contra">Contraseña:</label>
+            <input type="password" name="contra" id="contra" required />
+          </div>
+
+          <div class="flex-col sm:flex-row flex gap-2 mt-8">
+            <button class="cta flex-1" type="submit">Crear</button>
+            <button class="cta" type="reset">Limpiar</button>
+          </div>
+
+          <a class="text-natalia-blue-400" href="./registro.html">
+            No tienes cuenta? crea una!
+          </a>
+        </form>
+        <p id="resultado"></p>
+      </div>
+    </main>
+  </body>
+</html>

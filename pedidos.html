@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Viera - Pedidos</title>
+    <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/pedidos.js" defer type="module"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./">Natalia Viera</a>
+      <nav>
+        <ul id="menu">
+          <li><a href="./">Inicio</a></li>
+          <li><a href="./productos.html">Productos</a></li>
+          <li><a href="./inicio-de-sesion.html">Carrito</a></li>
+          <li><a href="./inicio-de-sesion.html">Iniciar Sesión</a></li>
+          <li><a href="./registro.html">Registrarse</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Administracion de pedidos</h1>
+
+      <section>
+        <h2>Pedidos</h2>
+        <p id="resultado"></p>
+
+        <form id="filtrar">
+          <label for="filtro">ID Pedido:</label>
+          <input type="numnber" id="filtro" name="filtro" />
+          <button type="submit">OK</button>
+        </form>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>ID Pedido</th>
+              <th>Tarjeta</th>
+              <th>Cantidad De Elementos</th>
+              <th>Monto</th>
+              <th>Fecha Solicitud</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-pedidos"></tbody>
+        </table>
+      </section>
+
+      <section>
+        <div>
+          <h2>Ver pedido</h2>
+          <ul id="detalles-pedido">
+            <li>No hay pedido seleccionado</li>
+          </ul>
+        </div>
+        <div>
+          <p>Total: <span id="total">...</span></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

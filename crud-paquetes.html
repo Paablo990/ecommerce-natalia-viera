@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud Paquetes</title>
+    <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/crud-paquetes.js" defer type="module"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./administracion.html">Natalia Viera</a>
+      <nav>
+        <ul id="menu">
+          <li><a href="./administracion-usuarios.html">Clientes</a></li>
+          <li><a href="./crud-administradores.html">Administradores</a></li>
+          <li><a href="./crud-productos.html">Productos</a></li>
+          <li><a href="./crud-proveedores.html">Proveedores</a></li>
+          <li><a href="./crud-paquetes.html">Paquetes</a></li>
+          <li><a href="./">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Gestion Paquetes</h1>
+
+      <section id="crear">
+        <h2>Crear</h2>
+
+        <form id="seleccionar">
+          <label for="id-seleccionar">Id:</label>
+          <input type="number" name="id" id="id-seleccionar" required />
+          <button type="submit">Seleccionar</button>
+        </form>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Imagen</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-seleccionar"></tbody>
+        </table>
+        <p id="resultado-seleccionar"></p>
+
+        <hr />
+
+        <form id="agregar">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required />
+          </div>
+
+          <div>
+            <label for="precio">Precio:</label>
+            <input type="number" name="precio" id="precio" min="1" required />
+
+            <label for="descuento">Descuento:</label>
+            <input
+              type="number"
+              name="descuento"
+              id="descuento"
+              min="0"
+              max="99"
+              required
+            />
+
+            <label for="stock">Stock:</label>
+            <input type="number" name="stock" id="stock" min="0" required />
+          </div>
+
+          <br />
+
+          <div>
+            <label for="descripcion">Descripcion:</label>
+            <textarea
+              name="descripcion"
+              id="descripcion"
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+          </div>
+
+          <div>
+            <button type="submit">Crear</button>
+            <button type="reset">Limpiar</button>
+          </div>
+        </form>
+        <p id="resultado-agregar"></p>
+      </section>
+
+      <section id="modificar">
+        <h2>Modificar</h2>
+        <form id="modificar-buscar">
+          <label for="id">Id:</label>
+          <input type="number" name="id" id="id" required />
+          <button type="submit">Buscar</button>
+        </form>
+
+        <hr />
+
+        <form id="modificar-seleccionar">
+          <label for="mod-id-seleccionar">Id:</label>
+          <input type="number" name="id" id="mod-id-seleccionar" required />
+          <button type="submit" id="mod-submit-seleccionar">Seleccionar</button>
+        </form>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Imagen</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-seleccionar-modificar"></tbody>
+        </table>
+        <p id="resultado-seleccionar-modificar"></p>
+
+        <hr />
+
+        <form id="modificar-paquete">
+          <div>
+            <label for="mod-nombre">Nombre:</label>
+            <input type="text" name="nombre" id="mod-nombre" required />
+          </div>
+
+          <div>
+            <label for="mod-precio">Precio:</label>
+            <input
+              type="number"
+              name="precio"
+              id="mod-precio"
+              min="1"
+              required
+            />
+
+            <label for="mod-descuento">Descuento:</label>
+            <input
+              type="number"
+              name="descuento"
+              id="mod-descuento"
+              min="0"
+              max="99"
+              required
+            />
+
+            <label for="mod-stock">Stock:</label>
+            <input type="number" name="stock" id="mod-stock" min="0" required />
+          </div>
+
+          <br />
+
+          <div>
+            <label for="mod-descripcion">Descripcion:</label>
+            <textarea
+              name="descripcion"
+              id="mod-descripcion"
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+          </div>
+
+          <div>
+            <button type="submit" id="mod-submit">Crear</button>
+            <button type="reset" id="mod-reset">Limpiar</button>
+          </div>
+        </form>
+        <p id="resultado-modificar"></p>
+      </section>
+
+      <section id="buscar">
+        <h2>Buscar</h2>
+        <p id="resultado-borrar"></p>
+        <form id="filtrar">
+          <label for="filtro">Id:</label>
+          <input type="text" id="filtro" name="filtro" />
+          <button type="submit">OK</button>
+        </form>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Nombre</th>
+              <th>Productos</th>
+              <th>Precio</th>
+              <th>Descuento</th>
+              <th>Stock</th>
+              <th>Imagen</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-buscar"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

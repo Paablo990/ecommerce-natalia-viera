@@ -1,0 +1,12 @@
+@tailwind base;
+
+.hero {
+  background-image: url('./../img/assets/hero-picture.jpg');
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.cta {
+  @apply bg-natalia-blue-400 text-white p-2 whitespace-nowrap uppercase font-bold;
+}

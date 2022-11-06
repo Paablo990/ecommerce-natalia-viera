@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud Administradores</title>
+    <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/crud-administradores.js" defer type="module"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#crear">Crear</a></li>
+          <li><a href="#modificar">Modificar</a></li>
+          <li><a href="#buscar">Buscar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Gestion Administradores</h1>
+
+      <section id="crear">
+        <h2>Crear</h2>
+        <form id="agregar">
+          <div>
+            <label for="ci">Cedula:</label>
+            <input type="number" name="ci" id="ci" required />
+          </div>
+
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required />
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" id="apellido" required />
+          </div>
+
+          <div>
+            <label for="rol">Rol:</label>
+            <select name="rol" id="rol">
+              <option value="vendedor">Vendedor</option>
+              <option value="comprador">Comprador</option>
+              <option value="jefe">Jefe</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="correo">Correo:</label>
+            <input type="email" name="correo" id="correo" required />
+          </div>
+
+          <div>
+            <label for="contra">Contraseña:</label>
+            <input type="password" name="contra" id="contra" required />
+          </div>
+
+          <div>
+            <label for="celular">Celular:</label>
+            <input type="tel" name="celular" id="celular" required />
+          </div>
+
+          <div>
+            <button type="submit">Crear</button>
+            <button type="reset">Limpiar</button>
+          </div>
+        </form>
+        <p id="resultado-crear"></p>
+      </section>
+
+      <section id="modificar">
+        <h2>Modificar</h2>
+        <form id="modificar-buscar">
+          <label for="ci">CI:</label>
+          <input type="number" name="ci" id="ci" required />
+          <button type="submit">Buscar</button>
+        </form>
+
+        <hr />
+
+        <form id="modificar-administrador">
+          <div>
+            <label for="mod-ci">Cedula:</label>
+            <input type="number" name="ci" id="mod-ci" required />
+          </div>
+
+          <div>
+            <label for="mod-nombre">Nombre:</label>
+            <input type="text" name="nombre" id="mod-nombre" required />
+
+            <label for="mod-apellido">Apellido:</label>
+            <input type="text" name="apellido" id="mod-apellido" required />
+          </div>
+
+          <div>
+            <label for="mod-correo">Correo:</label>
+            <input type="email" name="correo" id="mod-correo" required />
+          </div>
+
+          <div>
+            <label for="mod-contra">Contraseña:</label>
+            <input type="password" name="contra" id="mod-contra" required />
+          </div>
+
+          <div>
+            <label for="mod-celular">Celular:</label>
+            <input type="tel" name="celular" id="mod-celular" required />
+          </div>
+
+          <div>
+            <button type="submit" id="mod-submit">Crear</button>
+            <button type="reset" id="mod-reset">Limpiar</button>
+          </div>
+        </form>
+        <p id="resultado-modificar"></p>
+      </section>
+
+      <section id="buscar">
+        <h2>Buscar</h2>
+        <p id="resultado-borrar"></p>
+        <form id="filtrar">
+          <label for="filtro">CI:</label>
+          <input type="text" id="filtro" name="filtro" />
+          <button type="submit">OK</button>
+        </form>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Rol</th>
+              <th>CI</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Correo</th>
+              <th>Celular</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-buscar"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

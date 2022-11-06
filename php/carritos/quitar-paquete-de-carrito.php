@@ -1,0 +1,63 @@
+<?php
+
+require_once __DIR__ . "/../Database.php";
+require_once __DIR__ . "/../utilidades.php";
+
+try {
+  $database = new Database();
+
+  if ($_SERVER["REQUEST_METHOD"] !== "DELETE")
+    throw new Exception("Solo se permiten peticiones DELETE", 404);
+
+  // TODO: VALIDACIONES CAMPOS
+
+  $id_paquete = $_GET["id_p"];
+  $id_usuario = $_GET["id_u"];
+
+  if (!existeCliente($database, $id_usuario))
+    throw new Exception("Cliente no encontrado", 404);
+
+  if (!existePaquete($database, $id_paquete))
+    throw new Exception("Paquete no encontrado", 404);
+
+  $query = "SELECT `id_carrito` FROM CARRITOS WHERE `id_cliente`=?";
+
+  $id_carrito = $database->queryWithParams(
+    $query,
+    [$id_usuario],
+    "s"
+  )[0]['id_carrito'];
+
+  if (!existePaqueteEnCarrito($database, $id_carrito, $id_paquete))
+    throw new Exception("Paquete no encontrado en carrito", 404);
+
+  $query = "DELETE FROM TIENE_C_2 WHERE `id_carrito`=? AND `id_paquete`=?";
+
+  $database->updateOrDeleteRow(
+    $query,
+    [
+      $id_carrito,
+      $id_paquete
+    ],
+    "ii"
+  );
+
+  echo json_encode(["resultado" => "Se quito correctamente del carrito"]);
+  return http_response_code(200);
+
+  // errores inesperados
+} catch (Throwable | mysqli_sql_exception $th) {
+  echo json_encode([
+    "resultado" => $th->getMessage(),
+    "codigo" => $th->getCode()
+  ]);
+  return http_response_code(500);
+
+  // errores esperados
+} catch (Exception $ex) {
+  echo json_encode([
+    "resultado" => $ex->getMessage(),
+    "codigo" => $ex->getCode()
+  ]);
+  return http_response_code($ex->getCode());
+}

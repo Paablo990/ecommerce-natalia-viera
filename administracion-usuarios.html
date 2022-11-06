@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Viera - Usuarios</title>
+    <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/administracion-usuarios.js" defer type="module"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#usuarios-na">Usuarios sin aprobar</a></li>
+          <li><a href="#usuarios">Usuarios aprobados</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Administracion de usuarios</h1>
+
+      <section id="usuarios-na">
+        <h2>Usuarios sin Aprobar</h2>
+        <p id="resultado-na"></p>
+
+        <form id="filtrar-na">
+          <label for="filtro-na">CI:</label>
+          <input type="text" id="filtro-na" name="filtro" />
+          <button type="submit">OK</button>
+        </form>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>CI</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Correo</th>
+              <th>Celular</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-usuarios-na"></tbody>
+        </table>
+      </section>
+
+      <section id="usuarios">
+        <h2>Usuarios Aprobados</h2>
+        <p id="resultado"></p>
+
+        <form id="filtrar">
+          <label for="filtro">CI:</label>
+          <input type="text" id="filtro" name="filtro" />
+          <button type="submit">OK</button>
+        </form>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>CI</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Correo</th>
+              <th>Celular</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-usuarios"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
