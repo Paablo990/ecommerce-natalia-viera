@@ -4,9 +4,6 @@
   background-image: url('./../img/assets/hero-picture.jpg');
 }
 
-@tailwind components;
-@tailwind utilities;
-
 .cta {
   @apply bg-natalia-blue-400 text-white p-2 whitespace-nowrap uppercase font-bold;
 }
@@ -14,3 +11,12 @@
 .cta:disabled {
   @apply bg-gray-300;
 }
+
+th,
+tr,
+td {
+  @apply border border-gray-900 p-1;
+}
+
+@tailwind components;
+@tailwind utilities;

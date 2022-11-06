@@ -57,8 +57,7 @@ $(async () => {
 });
 
 async function cargarCarrito() {
-  $('#lista-productos').html('<li>Cargando...</li>');
-  $('#lista-productos').css({ color: 'black' });
+  $('#lista-productos').html('<li class="text-gray-600">Cargando</li>');
 
   $('#abrir-dialogo').attr('disabled', '');
 
@@ -68,7 +67,7 @@ async function cargarCarrito() {
 
   if (codigo >= 400) {
     $('#lista-productos').html(
-      '<li>Ocurrio un problema cargando el carrito...</li>'
+      '<li class="text-gray-600">Ocurrio un problema cargando el carrito...</li>'
     );
     $('#lista-productos').css({ color: 'red' });
 
@@ -80,9 +79,9 @@ async function cargarCarrito() {
   }
 
   if (resultado.length === 0) {
-    $('#lista-productos').html('<li>No hay productos</li>');
-    $('#lista-productos').css({ color: 'black' });
-
+    $('#lista-productos').html(
+      '<li class="text-gray-600">No hay productos</li>'
+    );
     $('#total').html(`...`);
 
     $('#abrir-dialogo').attr('disabled', '');
@@ -188,25 +187,51 @@ function renderProducto(producto) {
 function renderPaquete(paquete) {
   const {
     id_paquete: id,
+    cantidad_productos,
     nombre,
     ruta,
-    descripcion,
+    descuento,
     precio,
     cantidad
   } = paquete;
 
   return `
-    <li>
-      <button type="button" data-id="${id}" data-action="borrar-pa">
-        X
-      </button>
-      <p>PAQUETE</p>
-      <a href="./paquete.html?id=${id}">
-        <img src="./img/${ruta}" alt="${ruta}" />
-      </a>
-      <h3>${nombre}</h3>
-      <p>$${precio}</p>
-      <p>Cantidad: x${cantidad}</p>
-    </li>
+  <li class="flex max-h-32 p-2 border border-gray-300 relative">
+  <p
+  class="absolute -left-2 -top-2 bg-natalia-blue-400 text-white uppercase font-black tracking-widest text-xs p-1"
+>
+  Items: ${cantidad_productos}
+</p>
+  <div class="flex">
+    <a class="w-32" href="./paquete.html?id=${id}">
+      <img
+        class="h-full object-cover"
+        src="./img/${ruta}"
+        alt="${ruta}"
+      />
+    </a>
+    <div>
+      <h3 class="max-w-[200px] sm:max-w-xs break-words font-bold">
+        ${nombre}
+      </h3>
+      <p class="font-semibold relative w-min mt-auto">
+        $${precio - (precio * descuento) / 100}
+        <span
+          class="absolute text-xs -top-2 -right-3 text-red-500 line-through"
+          >${descuento > 0 ? `$${(precio * descuento) / 100}` : ``}</span
+        >
+      </p>
+      <p class="text-gray-600 text-sm">Cantidad: x${cantidad}</p>
+    </div>
+  </div>
+  <button
+    class="ml-auto absolute top-0 right-0 h-full text-2xl font-black text-white px-5 bg-red-500"
+    type="button"
+    data-id="${id}"
+    data-action="borrar-pa"
+  >
+    X
+  </button>
+</li>
   `;
 }

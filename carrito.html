@@ -54,32 +54,44 @@
         </div>
       </div>
 
-      <dialog id="dialog">
-        <button type="button" id="cerrar-dialogo">X</button>
-        <form id="compra">
-          <div>
-            <label for="nombre">Nombre del Titular:</label>
-            <input type="text" name="nombre" id="nombre" required />
-          </div>
+      <dialog class="border border-gray-900 mx-auto" id="dialog">
+        <div class="flex flex-col gap-4">
+          <button class="font-bold w-min" type="button" id="cerrar-dialogo">
+            Volver
+          </button>
+          <form class="grid grid-cols-2 gap-2 border-gray-300" id="compra">
+            <div
+              class="col-span-full sm:col-end-2 sm:col-start-1 flex flex-col"
+            >
+              <label for="nombre">Nombre del Titular:</label>
+              <input type="text" name="nombre" id="nombre" required />
+            </div>
 
-          <div>
-            <label for="apellido">Apellido del Titular:</label>
-            <input type="text" name="apellido" id="apellido" required />
-          </div>
+            <div class="col-span-full sm:col-start-2 flex flex-col">
+              <label for="apellido">Apellido del Titular:</label>
+              <input type="text" name="apellido" id="apellido" required />
+            </div>
 
-          <div>
-            <label for="tarjeta">Numero de Tarjeta:</label>
-            <input type="number" name="tarjeta" id="tarjeta" required />
+            <div class="col-span-full flex flex-col">
+              <label for="tarjeta">Numero de Tarjeta:</label>
+              <input type="number" name="tarjeta" id="tarjeta" required />
+            </div>
 
-            <label for="codigo">Codigo de Seguridad:</label>
-            <input type="number" name="codigo" id="codigo" required />
-          </div>
+            <div
+              class="col-span-full sm:col-end-2 sm:col-start-1 flex flex-col"
+            >
+              <label for="codigo">Codigo de Seguridad:</label>
+              <input type="number" name="codigo" id="codigo" required />
+            </div>
 
-          <button type="submit">Aceptar</button>
-          <button type="reset">Limpiar</button>
-        </form>
+            <div class="flex-col sm:flex-row flex gap-2 mt-8 col-span-full">
+              <button class="cta flex-1" type="submit">Crear</button>
+              <button class="cta" type="reset">Limpiar</button>
+            </div>
+          </form>
 
-        <p id="resultado"></p>
+          <p id="resultado"></p>
+        </div>
       </dialog>
     </main>
   </body>
