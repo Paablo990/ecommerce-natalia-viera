@@ -1,1 +1,1 @@
-export const API_URL = `/prueba-crud-proyecto/php`;
+export const API_URL = `/nashe/php`;

@@ -10,3 +10,7 @@
 .cta {
   @apply bg-natalia-blue-400 text-white p-2 whitespace-nowrap uppercase font-bold;
 }
+
+.cta:disabled {
+  @apply bg-gray-300;
+}

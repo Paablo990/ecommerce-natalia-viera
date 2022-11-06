@@ -144,25 +144,44 @@ function renderProducto(producto) {
     id_producto: id,
     nombre,
     ruta,
-    descripcion,
     precio,
-    cantidad
+    cantidad,
+    descuento
   } = producto;
 
   return `
-    <li>
-      <button type="button" data-id="${id}" data-action="borrar-pr">
-        X
-      </button>
-      <div>
-        <a href="./producto.html?id=${id}">
-          <img src="./img/${ruta}" alt="${ruta}" />
-        </a>
-        <h3>${nombre}</h3>
-        <p>$${precio}</p>
-        <p>Cantidad: x${cantidad}</p>
-      </div>
-    </li>
+  <li class="flex max-h-32 p-2 border border-gray-300 relative">
+  <div class="flex">
+    <a class="w-32" href="./producto.html?id=${id}">
+      <img
+        class="h-full object-cover"
+        src="./img/${ruta}"
+        alt="${ruta}"
+      />
+    </a>
+    <div>
+      <h3 class="max-w-[200px] sm:max-w-xs break-words font-bold">
+        ${nombre}
+      </h3>
+      <p class="font-semibold relative w-min mt-auto">
+        $${precio - (precio * descuento) / 100}
+        <span
+          class="absolute text-xs -top-2 -right-3 text-red-500 line-through"
+          >${descuento > 0 ? `$${(precio * descuento) / 100}` : ``}</span
+        >
+      </p>
+      <p class="text-gray-600 text-sm">Cantidad: x${cantidad}</p>
+    </div>
+  </div>
+  <button
+    class="ml-auto absolute top-0 right-0 h-full text-2xl font-black text-white px-5 bg-red-500"
+    type="button"
+    data-id="${id}"
+    data-action="borrar-pr"
+  >
+    X
+  </button>
+</li>
   `;
 }
 
