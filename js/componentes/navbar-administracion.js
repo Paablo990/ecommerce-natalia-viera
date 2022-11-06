@@ -66,6 +66,8 @@ function renderMenuItem(item) {
   const { link, label, id } = item;
 
   return `
-    <li><a href="${link}" ${id ? `id="${id}"` : ``}>${label}</a></li>
+    <li><a class="${!id ? `p-2` : `cta`}" href="${link}" ${
+    id ? `id="${id}"` : ``
+  }>${label}</a></li>
   `;
 }

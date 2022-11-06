@@ -218,13 +218,13 @@ function renderRowUsuarioNA(usuario) {
       <td>${apellido}</td>
       <td>${correo}</td>
       <td>${celular}</td>
-      <td>
-        <button type="button" data-ci="${ci}" data-action="denegar">
+      <td class="p-0 bg-natalia-blue-400">
+        <button class="cta w-full" type="button" data-ci="${ci}" data-action="denegar">
           Denegar
         </button>
       </td>
-      <td>
-        <button type="button" data-ci="${ci}" data-action="aceptar">
+      <td class="p-0 bg-natalia-blue-400">
+        <button class="cta w-full" type="button" data-ci="${ci}" data-action="aceptar">
           Aceptar
         </button>
       </td>
@@ -241,8 +241,8 @@ function renderRowUsuario(usuario) {
       <td>${apellido}</td>
       <td>${correo}</td>
       <td>${celular}</td>
-      <td>
-        <button type="button" data-ci="${ci}" data-action="suspender">
+      <td class="p-0 bg-natalia-blue-400">
+        <button class="cta w-full" type="button" data-ci="${ci}" data-action="suspender">
           Suspender
         </button>
       </td>

@@ -191,13 +191,13 @@ function renderRowPedido(pedido) {
       <td>$${monto}</td>
       <td>${fecha_solicitud.substring(0, 10)}</td>
       <td>${estados[estado]}</td>
-      <td>
-        <button data-id="${id_pedido}" data-action="aceptar">
+      <td class="p-0 bg-natalia-blue-400">
+        <button class="cta w-full"  data-id="${id_pedido}" data-action="aceptar">
           Aceptar
         </button>
       </td>
-      <td>
-        <button data-id="${id_pedido}" data-action="mostrar">
+      <td class="p-0 bg-natalia-blue-400">
+        <button class="cta w-full" data-id="${id_pedido}" data-action="mostrar">
           Mostrar
         </button>
       </td>
@@ -210,38 +210,79 @@ function renderProducto(producto) {
     id_producto: id,
     nombre,
     ruta,
-    descripcion,
     precio,
-    cantidad
+    cantidad,
+    descuento
   } = producto;
 
   return `
-    <li>
-        <img src="./img/${ruta}" alt="${ruta}" />
-        <h3>${nombre}</h3>
-        <p>$${precio}</p>
-        <p>Cantidad: x${cantidad}</p>
-    </li>
+  <li class="flex max-h-32 p-2 border border-gray-300 relative">
+  <div class="flex">
+    <a class="w-32" href="./producto.html?id=${id}">
+      <img
+        class="h-full object-cover"
+        src="./img/${ruta}"
+        alt="${ruta}"
+      />
+    </a>
+    <div>
+      <h3 class="max-w-[200px] sm:max-w-xs break-words font-bold">
+        ${nombre}
+      </h3>
+      <p class="font-semibold relative w-min mt-auto">
+        $${precio - (precio * descuento) / 100}
+        <span
+          class="absolute text-xs -top-2 -right-3 text-red-500 line-through"
+          >${descuento > 0 ? `$${(precio * descuento) / 100}` : ``}</span
+        >
+      </p>
+      <p class="text-gray-600 text-sm">Cantidad: x${cantidad}</p>
+    </div>
+  </div>
+</li>
   `;
 }
 
 function renderPaquete(paquete) {
   const {
     id_paquete: id,
+    cantidad_productos,
     nombre,
     ruta,
-    descripcion,
+    descuento,
     precio,
     cantidad
   } = paquete;
 
   return `
-    <li>
-      <p>PAQUETE</p>
-      <img src="./img/${ruta}" alt="${ruta}" />
-      <h3>${nombre}</h3>
-      <p>$${precio}</p>
-      <p>Cantidad: x${cantidad}</p>
-    </li>
+  <li class="flex max-h-32 p-2 border border-gray-300 relative">
+  <p
+  class="absolute -left-2 -top-2 bg-natalia-blue-400 text-white uppercase font-black tracking-widest text-xs p-1"
+>
+  Items: ${cantidad_productos}
+</p>
+  <div class="flex">
+    <a class="w-32" href="./paquete.html?id=${id}">
+      <img
+        class="h-full object-cover"
+        src="./img/${ruta}"
+        alt="${ruta}"
+      />
+    </a>
+    <div>
+      <h3 class="max-w-[200px] sm:max-w-xs break-words font-bold">
+        ${nombre}
+      </h3>
+      <p class="font-semibold relative w-min mt-auto">
+        $${precio - (precio * descuento) / 100}
+        <span
+          class="absolute text-xs -top-2 -right-3 text-red-500 line-through"
+          >${descuento > 0 ? `$${(precio * descuento) / 100}` : ``}</span
+        >
+      </p>
+      <p class="text-gray-600 text-sm">Cantidad: x${cantidad}</p>
+    </div>
+  </div>
+</li>
   `;
 }

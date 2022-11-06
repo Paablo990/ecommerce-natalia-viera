@@ -5,40 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crud Administradores</title>
+    <link rel="stylesheet" href="./css/output.css" />
     <script src="./js/jquery.js" defer type="module"></script>
     <script src="./js/crud-administradores.js" defer type="module"></script>
   </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#crear">Crear</a></li>
-          <li><a href="#modificar">Modificar</a></li>
-          <li><a href="#buscar">Buscar</a></li>
-        </ul>
-      </nav>
+  <body class="text-gray-900">
+    <header class="sticky top-0 left-0 border-b border-gray-300 bg-white z-50">
+      <div class="container mx-auto flex">
+        <a href="./administracion.html" class="py-2">
+          <img
+            src="./img/assets/natalia-logo.svg"
+            alt="Logo natalia viera"
+            class="h-9"
+          />
+        </a>
+        <nav class="hidden md:flex ml-auto">
+          <ul
+            id="menu"
+            class="flex-col md:flex-row gap-5 flex h-full md:items-center md:gap-1"
+          >
+            <li>
+              <a class="p-2" href="./administracion-usuarios.html">Clientes</a>
+            </li>
+            <li>
+              <a class="p-2" href="./administracion-pedidos.html">Pedidos</a>
+            </li>
+            <li>
+              <a class="p-2" href="./crud-administradores.html"
+                >Administradores</a
+              >
+            </li>
+            <li><a class="p-2" href="./crud-productos.html">Productos</a></li>
+            <li>
+              <a class="p-2" href="./crud-proveedores.html">Proveedores</a>
+            </li>
+            <li><a class="p-2" href="./crud-paquetes.html">Paquetes</a></li>
+            <li><a class="cta" href="./">Cerrar Sesión</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <h1>Gestion Administradores</h1>
+    <main class="py-16 container mx-auto">
+      <section class="flex flex-col gap-2" id="crear">
+        <form
+          class="grid border grid-cols-2 gap-2 border-gray-300 px-6 py-16"
+          id="agregar"
+        >
+          <h2 class="text-4xl font-black">Crear</h2>
 
-      <section id="crear">
-        <h2>Crear</h2>
-        <form id="agregar">
-          <div>
+          <div class="col-span-full flex flex-col mt-8">
             <label for="ci">Cedula:</label>
             <input type="number" name="ci" id="ci" required />
           </div>
 
-          <div>
+          <div class="col-span-full sm:col-end-2 sm:col-start-1 flex flex-col">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre" required />
+          </div>
 
+          <div class="col-span-full sm:col-start-2 flex flex-col">
             <label for="apellido">Apellido:</label>
             <input type="text" name="apellido" id="apellido" required />
           </div>
 
-          <div>
+          <div class="flex flex-col col-span-full">
             <label for="rol">Rol:</label>
             <select name="rol" id="rol">
               <option value="vendedor">Vendedor</option>
@@ -47,98 +78,123 @@
             </select>
           </div>
 
-          <div>
+          <div class="flex flex-col col-span-full">
             <label for="correo">Correo:</label>
             <input type="email" name="correo" id="correo" required />
           </div>
 
-          <div>
+          <div class="flex flex-col col-span-full">
             <label for="contra">Contraseña:</label>
             <input type="password" name="contra" id="contra" required />
           </div>
 
-          <div>
+          <div class="flex flex-col col-span-full">
             <label for="celular">Celular:</label>
             <input type="tel" name="celular" id="celular" required />
           </div>
 
-          <div>
-            <button type="submit">Crear</button>
-            <button type="reset">Limpiar</button>
+          <div class="flex flex-col sm:flex-row col-span-full mt-8 gap-2">
+            <button class="cta flex-1" type="submit">Crear</button>
+            <button class="cta" type="reset">Limpiar</button>
           </div>
+          <p class="col-span-full" id="resultado-crear"></p>
         </form>
-        <p id="resultado-crear"></p>
       </section>
 
-      <section id="modificar">
-        <h2>Modificar</h2>
-        <form id="modificar-buscar">
-          <label for="ci">CI:</label>
-          <input type="number" name="ci" id="ci" required />
-          <button type="submit">Buscar</button>
-        </form>
+      <section class="mt-16" id="modificar">
+        <div class="border border-gray-300 px-6 py-16">
+          <h2 class="text-4xl font-black">Modificar</h2>
+          <form class="flex flex-col gap-2 mt-8" id="modificar-buscar">
+            <div class="flex">
+              <input
+                type="number"
+                name="ci"
+                id="ci"
+                placeholder="CI del Usuario..."
+                required
+              />
+              <button class="cta" type="submit">Buscar</button>
+            </div>
+          </form>
 
-        <hr />
+          <form
+            class="grid grid-cols-2 gap-2 mt-2"
+            id="modificar-administrador"
+          >
+            <div class="flex flex-col col-span-full">
+              <label for="mod-ci">Cedula:</label>
+              <input type="number" name="ci" id="mod-ci" required />
+            </div>
 
-        <form id="modificar-administrador">
-          <div>
-            <label for="mod-ci">Cedula:</label>
-            <input type="number" name="ci" id="mod-ci" required />
-          </div>
+            <div
+              class="col-span-full sm:col-end-2 sm:col-start-1 flex flex-col"
+            >
+              <label for="mod-nombre">Nombre:</label>
+              <input type="text" name="nombre" id="mod-nombre" required />
+            </div>
 
-          <div>
-            <label for="mod-nombre">Nombre:</label>
-            <input type="text" name="nombre" id="mod-nombre" required />
+            <div class="col-span-full sm:col-start-2 flex flex-col">
+              <label for="mod-apellido">Apellido:</label>
+              <input type="text" name="apellido" id="mod-apellido" required />
+            </div>
 
-            <label for="mod-apellido">Apellido:</label>
-            <input type="text" name="apellido" id="mod-apellido" required />
-          </div>
+            <div class="flex flex-col col-span-full">
+              <label for="mod-correo">Correo:</label>
+              <input type="email" name="correo" id="mod-correo" required />
+            </div>
 
-          <div>
-            <label for="mod-correo">Correo:</label>
-            <input type="email" name="correo" id="mod-correo" required />
-          </div>
+            <div class="flex flex-col col-span-full">
+              <label for="mod-contra">Contraseña:</label>
+              <input type="password" name="contra" id="mod-contra" required />
+            </div>
 
-          <div>
-            <label for="mod-contra">Contraseña:</label>
-            <input type="password" name="contra" id="mod-contra" required />
-          </div>
+            <div class="flex flex-col col-span-full">
+              <label for="mod-celular">Celular:</label>
+              <input type="tel" name="celular" id="mod-celular" required />
+            </div>
 
-          <div>
-            <label for="mod-celular">Celular:</label>
-            <input type="tel" name="celular" id="mod-celular" required />
-          </div>
+            <div class="flex flex-col sm:flex-row col-span-full mt-8 gap-2">
+              <button class="cta flex-1" type="submit" id="mod-submit">
+                Crear
+              </button>
+              <button class="cta" type="reset" id="mod-reset">Limpiar</button>
+            </div>
 
-          <div>
-            <button type="submit" id="mod-submit">Crear</button>
-            <button type="reset" id="mod-reset">Limpiar</button>
-          </div>
-        </form>
-        <p id="resultado-modificar"></p>
+            <p class="col-span-full" id="resultado-modificar"></p>
+          </form>
+        </div>
       </section>
 
-      <section id="buscar">
-        <h2>Buscar</h2>
+      <section class="mt-8" id="buscar">
+        <h2 class="text-4xl font-black">Buscar</h2>
         <p id="resultado-borrar"></p>
         <form id="filtrar">
-          <label for="filtro">CI:</label>
-          <input type="text" id="filtro" name="filtro" />
-          <button type="submit">OK</button>
+          <div class="flex">
+            <input
+              type="text"
+              id="filtro"
+              name="filtro"
+              placeholder="CI del Usuario..."
+            />
+            <button class="cta" type="submit">OK</button>
+          </div>
         </form>
 
-        <table border="1">
-          <thead>
-            <tr>
-              <th>Rol</th>
-              <th>CI</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Correo</th>
-              <th>Celular</th>
-            </tr>
-          </thead>
-          <tbody id="tabla-buscar"></tbody>
-        </table>
+        <div class="w-full overflow-x-scroll mt-2">
+          <table class="w-full overflow-x-scroll table-auto">
+            <thead>
+              <tr>
+                <th>Rol</th>
+                <th>CI</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Celular</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-buscar"></tbody>
+          </table>
+        </div>
       </section>
     </main>
   </body>

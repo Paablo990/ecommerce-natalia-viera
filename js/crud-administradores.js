@@ -219,8 +219,8 @@ function renderRowAdministrador(administrador) {
     <td>${apellido}</td>
     <td>${correo}</td>
     <td>${celular}</td>
-    <td>
-      <button type="button" data-ci="${ci}" data-action="borrar">X</button>
+    <td class="p-0 bg-red-500">
+      <button class="cta w-full aspect-square bg-red-500" type="button" data-ci="${ci}" data-action="borrar">X</button>
     </td>
   </tr>`;
 }
