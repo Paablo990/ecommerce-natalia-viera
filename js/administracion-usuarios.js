@@ -1,6 +1,9 @@
+import { navbar } from './componentes/navbar-administracion.js';
 import { API_URL } from './utils/config.js';
 
 $(async () => {
+  await navbar(['jefe', 'vendedor']);
+
   await cargarTablaUsuariosNA();
 
   $('#filtrar-na').on('submit', async e => {

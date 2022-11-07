@@ -1,8 +1,10 @@
+import { navbar } from './componentes/navbar-administracion.js';
 import { API_URL } from './utils/config.js';
 
 let productoAux = {};
 
 $(async () => {
+  await navbar(['jefe', 'comprador']);
   await cargarTabla();
 
   $('#filtrar').on('submit', async e => {
