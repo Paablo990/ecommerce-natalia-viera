@@ -114,7 +114,7 @@ function renderProductoPrincipal(producto) {
         : `${descripcion}...`
     }`
   );
-  $('#imagen')[0].src = `/prueba-crud-proyecto/img/${imagen}`;
+  $('#imagen')[0].src = `./img/${imagen}`;
   $('#imagen')[0].alt = `${imagen}`;
 }
 
