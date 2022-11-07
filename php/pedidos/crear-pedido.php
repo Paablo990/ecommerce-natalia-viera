@@ -81,7 +81,7 @@ try {
     [
       $id_usuario,
       $id_pedido,
-      date('d-m-y h:i:s')
+      date('Y-m-d h:i:s')
     ],
     "iis"
   );
@@ -205,7 +205,7 @@ try {
   $subject = "Remito de pedido para $nombre $apellido";
   $body = "Nombre Completo: $nombre $apellido\r\nTarjeta: $tarjeta\r\nTotal: \$$total";
 
-  mail($correo, $subject, $body, 'From: ' . $correo_recode . "\r\n");
+  // mail($correo, $subject, $body, 'From: ' . $correo_recode . "\r\n");
 
   echo json_encode(["resultado" => "Se realizo el pedido correctamente"]);
   return http_response_code(200);
