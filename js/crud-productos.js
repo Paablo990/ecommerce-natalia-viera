@@ -309,8 +309,8 @@ function renderRowProducto(producto) {
     <td>
       <img src="img/${ruta}" width="64px" height="64px"/>
     </td>
-    <td>
-      <button type="button" data-id="${id}" data-action="borrar">X</button>
+    <td class="p-0 bg-red-500">
+      <button class="cta w-full aspect-square bg-red-500" type="button" data-id="${id}" data-action="borrar">X</button>
     </td>
   </tr>`;
 }

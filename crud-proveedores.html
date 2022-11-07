@@ -4,120 +4,177 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crud Proveedores</title>
+    <title>Natalia Viera - Proveedores</title>
+    <link rel="stylesheet" href="./css/output.css" />
     <script src="./js/jquery.js" defer type="module"></script>
     <script src="./js/crud-proveedores.js" defer type="module"></script>
   </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#crear">Crear</a></li>
-          <li><a href="#modificar">Modificar</a></li>
-          <li><a href="#buscar">Buscar</a></li>
-        </ul>
-      </nav>
+  <body class="text-gray-900">
+    <header
+      class="sticky top-0 md:text-sm lg:text-base left-0 border-b border-gray-300 bg-white z-50"
+    >
+      <div class="container mx-auto flex">
+        <a href="./administracion.html" class="py-2">
+          <img
+            src="./img/assets/natalia-logo.svg"
+            alt="Logo natalia viera"
+            class="h-9"
+          />
+        </a>
+        <nav class="hidden md:flex ml-auto">
+          <ul
+            id="menu"
+            class="flex-col md:flex-row gap-5 flex h-full md:items-center md:gap-1"
+          >
+            <li>
+              <a class="p-2" href="./administracion-usuarios.html">Clientes</a>
+            </li>
+            <li>
+              <a class="p-2" href="./administracion-pedidos.html">Pedidos</a>
+            </li>
+            <li>
+              <a class="p-2" href="./crud-administradores.html"
+                >Administradores</a
+              >
+            </li>
+            <li><a class="p-2" href="./crud-productos.html">Productos</a></li>
+            <li>
+              <a class="p-2" href="./crud-proveedores.html">Proveedores</a>
+            </li>
+            <li><a class="p-2" href="./crud-paquetes.html">Paquetes</a></li>
+            <li><a class="cta" href="./">Cerrar Sesión</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <h1>Gestion Proveedores</h1>
-
+    <main class="container mx-auto py-16">
       <section id="crear">
-        <h2>Crear</h2>
-        <form id="agregar">
-          <div>
+        <form
+          class="grid grid-cols-2 border border-gray-300 px-6 py-16 gap-2"
+          id="agregar"
+        >
+          <h2 class="text-4xl font-black col-span-full">Crear</h2>
+
+          <div class="col-span-full flex flex-col mt-8">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre" required />
           </div>
 
-          <div>
+          <div class="col-span-full flex flex-col">
             <label for="correo">Correo:</label>
             <input type="email" name="correo" id="correo" required />
           </div>
 
-          <div>
+          <div class="col-span-full flex flex-col sm:col-start-1 sm:col-end-2">
             <label for="calle">Calle:</label>
             <input type="text" name="calle" id="calle" required />
+          </div>
+
+          <div class="col-span-full flex flex-col sm:col-start-2 sm:col-end-2">
             <label for="puerta">Nro De Puerta:</label>
             <input type="text" name="puerta" id="puerta" required />
           </div>
 
-          <div>
+          <div class="col-span-full flex flex-col">
             <label for="telefono">Telefono:</label>
             <input type="tel" name="telefono" id="telefono" required />
           </div>
 
-          <div>
-            <button type="submit">Crear</button>
-            <button type="reset">Limpiar</button>
+          <div class="col-span-full flex flex-col sm:flex-row gap-2 mt-8">
+            <button class="cta flex-1" type="submit">Crear</button>
+            <button class="cta" type="reset">Limpiar</button>
           </div>
+
+          <p class="col-span-full" id="resultado-crear"></p>
         </form>
-        <p id="resultado-crear"></p>
       </section>
 
-      <section id="modificar">
-        <h2>Modificar</h2>
-        <form id="modificar-buscar">
-          <label for="id">Id:</label>
-          <input type="number" name="id" id="id" required />
-          <button type="submit">Buscar</button>
-        </form>
+      <section class="mt-16" id="modificar">
+        <div class="border border-gray-300 px-6 py-16 gap-2 flex flex-col">
+          <h2 class="text-4xl font-black col-span-full">Modificar</h2>
 
-        <hr />
+          <form class="mt-8" id="modificar-buscar">
+            <div class="flex">
+              <input
+                type="number"
+                name="id"
+                id="id"
+                required
+                placeholder="ID del Proveedor..."
+              />
+              <button class="cta" type="submit">Buscar</button>
+            </div>
+          </form>
 
-        <form id="modificar-proveedor">
-          <div>
-            <label for="mod-nombre">Nombre:</label>
-            <input type="text" name="nombre" id="mod-nombre" required />
-          </div>
+          <form class="grid grid-cols-2 gap-2" id="modificar-proveedor">
+            <div class="col-span-full flex flex-col">
+              <label for="mod-nombre">Nombre:</label>
+              <input type="text" name="nombre" id="mod-nombre" required />
+            </div>
 
-          <div>
-            <label for="mod-correo">Correo:</label>
-            <input type="email" name="correo" id="mod-correo" required />
-          </div>
+            <div class="col-span-full flex flex-col">
+              <label for="mod-correo">Correo:</label>
+              <input type="email" name="correo" id="mod-correo" required />
+            </div>
 
-          <div>
-            <label for="mod-calle">Calle:</label>
-            <input type="text" name="calle" id="mod-calle" required />
-            <label for="mod-puerta">Nro De Puerta:</label>
-            <input type="text" name="puerta" id="mod-puerta" required />
-          </div>
+            <div class="col-span-full flex flex-col">
+              <label for="mod-calle">Calle:</label>
+              <input type="text" name="calle" id="mod-calle" required />
+            </div>
 
-          <div>
-            <label for="mod-telefono">Telefono:</label>
-            <input type="tel" name="telefono" id="mod-telefono" required />
-          </div>
+            <div class="col-span-full flex flex-col">
+              <label for="mod-puerta">Nro De Puerta:</label>
+              <input type="text" name="puerta" id="mod-puerta" required />
+            </div>
 
-          <div>
-            <button type="submit" id="mod-submit">Crear</button>
-            <button type="reset" id="mod-reset">Limpiar</button>
-          </div>
-        </form>
-        <p id="resultado-modificar"></p>
+            <div class="col-span-full flex flex-col">
+              <label for="mod-telefono">Telefono:</label>
+              <input type="tel" name="telefono" id="mod-telefono" required />
+            </div>
+
+            <div class="col-span-full flex flex-col sm:flex-row gap-2 mt-8">
+              <button class="cta flex-1" type="submit" id="mod-submit">
+                Crear
+              </button>
+              <button class="cta" type="reset" id="mod-reset">Limpiar</button>
+            </div>
+
+            <p class="colspanfull" id="resultado-modificar"></p>
+          </form>
+        </div>
       </section>
 
-      <section id="buscar">
-        <h2>Buscar</h2>
+      <section class="mt-16" id="buscar">
+        <h2 class="text-4xl font-black col-span-full">Buscar</h2>
         <p id="resultado-borrar"></p>
-        <form id="filtrar">
-          <label for="filtro">Id:</label>
-          <input type="text" id="filtro" name="filtro" />
-          <button type="submit">OK</button>
+        <form class="mt-8" id="filtrar">
+          <div class="flex">
+            <input
+              type="text"
+              id="filtro"
+              name="filtro"
+              placeholder="ID del Proveedor..."
+            />
+            <button class="cta" type="submit">OK</button>
+          </div>
         </form>
 
-        <table border="1">
-          <thead>
-            <tr>
-              <th>id</th>
-              <th>Nombre</th>
-              <th>Correo</th>
-              <th>Calle</th>
-              <th>Nro Puerta</th>
-              <th>Telefono</th>
-            </tr>
-          </thead>
-          <tbody id="tabla-buscar"></tbody>
-        </table>
+        <div class="overflow-x-scroll w-full mt-2">
+          <table class="overflow-x-scroll w-full table-auto">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Calle</th>
+                <th>Nro Puerta</th>
+                <th>Telefono</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-buscar"></tbody>
+          </table>
+        </div>
       </section>
     </main>
   </body>

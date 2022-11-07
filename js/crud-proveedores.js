@@ -223,8 +223,8 @@ function renderRowProveedor(proveedor) {
     <td>${calle}</td>
     <td>${puerta}</td>
     <td>${telefono}</td>
-    <td>
-      <button type="button" data-id="${id}" data-action="borrar">X</button>
+    <td class="p-0 bg-red-500">
+      <button class="cta w-full aspect-square bg-red-500" type="button" data-id="${id}" data-action="borrar">X</button>
     </td>
   </tr>`;
 }

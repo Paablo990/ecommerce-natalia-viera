@@ -70,6 +70,8 @@ try {
     "isi"
   );
 
+  date_default_timezone_set("America/Montevideo");
+
   $query = "INSERT INTO REALIZA (`id_cliente`,`id_pedido`,`fecha_solicitud`) VALUES (?,?,?)";
 
   $database->insertRow(
@@ -77,7 +79,7 @@ try {
     [
       $id_usuario,
       $id_pedido,
-      date('d-m-y h:i:s')
+      date('d-m-Y h:i:s')
     ],
     "iis"
   );

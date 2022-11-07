@@ -430,8 +430,8 @@ function renderRowPaquete(paquete) {
     <td>
       <img src="img/${ruta}" width="64px" height="64px"/>
     </td>
-    <td>
-      <button type="button" data-id="${id}" data-action="borrar">X</button>
+    <td class="p-0 bg-red-500">
+      <button class="cta w-full aspect-square bg-red-500" type="button" data-id="${id}" data-action="borrar">X</button>
     </td>
   </tr>`;
 }
@@ -446,8 +446,8 @@ function renderRowProducto(producto) {
     <td>
       <img src="img/${imagen}" width="64px" height="64px"/>
     </td>
-    <td>
-      <button type="button" data-id="${id}" data-action="deseleccionar">X</button>
+    <td class="p-0 bg-red-500">
+      <button class="cta w-full aspect-square bg-red-500" type="button" data-id="${id}" data-action="deseleccionar">X</button>
     </td>
   </tr>`;
 }
@@ -462,8 +462,8 @@ function renderRowProductoModificar(producto) {
     <td>
       <img src="img/${ruta}" width="64px" height="64px"/>
     </td>
-    <td>
-      <button type="button" data-id="${id}" data-action="deseleccionar-m">X</button>
+    <td class="p-0 bg-red-500">
+      <button class="cta w-full aspect-square bg-red-500" type="button" data-id="${id}" data-action="deseleccionar-m">X</button>
     </td>
   </tr>`;
 }

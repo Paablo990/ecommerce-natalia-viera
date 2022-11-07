@@ -41,13 +41,15 @@ try {
     "ii"
   );
 
+  date_default_timezone_set("America/Montevideo");
+
   if ($estado + 1 == 4) {
     $query = "UPDATE REALIZA SET `fecha_entrega`=? WHERE `id_pedido`=?";
 
     $database->updateOrDeleteRow(
       $query,
       [
-        date('d-m-y h:i:s'),
+        date('d-m-Y h:i:s'),
         $id_pedido
       ],
       "si"
