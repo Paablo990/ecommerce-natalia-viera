@@ -1,5 +1,11 @@
 @tailwind base;
 
+html,
+body,
+main {
+  height: 100%;
+}
+
 .hero {
   background-image: url('./../img/assets/hero-picture.jpg');
 }

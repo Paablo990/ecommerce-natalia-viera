@@ -679,6 +679,12 @@ select {
   --tw-backdrop-sepia:  ;
 }
 
+html,
+body,
+main {
+  height: 100%;
+}
+
 .hero {
   background-image: url('./../img/assets/hero-picture.jpg');
 }
@@ -818,16 +824,16 @@ td {
   margin-top: 2rem;
 }
 
-.mt-auto {
-  margin-top: auto;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-auto {
+  margin-top: auto;
 }
 
 .mt-16 {
@@ -870,29 +876,43 @@ td {
   aspect-ratio: 1 / 1;
 }
 
-.h-9 {
-  height: 2.25rem;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-9 {
+  height: 2.25rem;
 }
 
 .h-1\/2 {
   height: 50%;
 }
 
+.h-auto {
+  height: auto;
+}
+
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .max-h-32 {
   max-height: 8rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .w-min {
   width: -moz-min-content;
   width: min-content;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .w-32 {
@@ -951,16 +971,16 @@ td {
   gap: 1.25rem;
 }
 
-.gap-6 {
-  gap: 1.5rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-4 {
   gap: 1rem;
 }
 
-.gap-2 {
-  gap: 0.5rem;
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-12 {
@@ -982,10 +1002,6 @@ td {
 
 .overflow-scroll {
   overflow: scroll;
-}
-
-.overflow-x-auto {
-  overflow-x: auto;
 }
 
 .overflow-y-hidden {
@@ -1023,9 +1039,9 @@ td {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-red-500 {
+.bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-natalia-blue-400 {
@@ -1033,9 +1049,9 @@ td {
   background-color: rgb(38 83 241 / var(--tw-bg-opacity));
 }
 
-.bg-black {
+.bg-red-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-tl {
@@ -1074,20 +1090,12 @@ td {
   padding: 0.5rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-0 {
   padding: 0px;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
-.p-6 {
-  padding: 1.5rem;
+.p-1 {
+  padding: 0.25rem;
 }
 
 .py-2 {
@@ -1100,6 +1108,11 @@ td {
   padding-bottom: 4rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -1110,24 +1123,9 @@ td {
   padding-right: 2rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 .text-4xl {
@@ -1135,14 +1133,14 @@ td {
   line-height: 2.5rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-xs {
@@ -1193,13 +1191,13 @@ td {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.text-transparent {
-  color: transparent;
-}
-
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.text-transparent {
+  color: transparent;
 }
 
 .text-natalia-blue-400 {
@@ -1231,10 +1229,6 @@ td {
 }
 
 @media (min-width: 640px) {
-  .sm\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
   .sm\:col-start-1 {
     grid-column-start: 1;
   }

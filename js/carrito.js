@@ -33,7 +33,11 @@ $(async () => {
 
     const compra = new FormData(form);
     compra.append('usuario', id);
+    compra.append('correo', localStorage.getItem('correo'));
     compra.append('total', total);
+
+    $('#compra-submit').attr('disabled', '');
+    $('#compra-reset').attr('disabled', '');
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/pedidos/crear-pedido.php`, {
@@ -41,6 +45,9 @@ $(async () => {
         body: compra
       })
     ).json();
+
+    $('#compra-submit').removeAttr('disabled');
+    $('#compra-reset').removeAttr('disabled');
 
     if (codigo >= 400) {
       $('#resultado').html(resultado);

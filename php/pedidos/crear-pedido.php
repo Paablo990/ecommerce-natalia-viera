@@ -11,6 +11,8 @@ try {
 
   // TODO: VALIDACIONES CAMPOS
 
+  $correo = $_POST["correo"];
+
   $id_usuario = $_POST["usuario"];
   $total = $_POST["total"];
 
@@ -79,7 +81,7 @@ try {
     [
       $id_usuario,
       $id_pedido,
-      date('d-m-Y h:i:s')
+      date('d-m-y h:i:s')
     ],
     "iis"
   );
@@ -198,6 +200,12 @@ try {
     [$id_carrito],
     "i"
   );
+
+  $correo_recode = "recodemailing@gmail.com";
+  $subject = "Remito de pedido para $nombre $apellido";
+  $body = "Nombre Completo: $nombre $apellido\r\nTarjeta: $tarjeta\r\nTotal: \$$total";
+
+  mail($correo, $subject, $body, 'From: ' . $correo_recode . "\r\n");
 
   echo json_encode(["resultado" => "Se realizo el pedido correctamente"]);
   return http_response_code(200);
