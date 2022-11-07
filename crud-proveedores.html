@@ -7,21 +7,29 @@
     <title>Natalia Viera - Proveedores</title>
     <link rel="stylesheet" href="./css/output.css" />
     <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/utils/navbar-responsive.js" defer type="module"></script>
     <script src="./js/crud-proveedores.js" defer type="module"></script>
   </head>
   <body class="text-gray-900">
-    <header
-      class="sticky top-0 md:text-sm lg:text-base left-0 border-b border-gray-300 bg-white z-50"
-    >
+    <header class="sticky top-0 left-0 border-b border-gray-300 bg-white z-50">
       <div class="container mx-auto flex">
-        <a href="./administracion.html" class="py-2">
+        <a href="./" class="py-2">
           <img
             src="./img/assets/natalia-logo.svg"
             alt="Logo natalia viera"
             class="h-9"
           />
         </a>
-        <nav class="hidden md:flex ml-auto">
+
+        <button id="toggle-menu" class="ml-auto z-50 md:hidden">
+          <img src="./img/assets/menu.svg" width="48px" height="48px" />
+        </button>
+
+        <nav
+          data-visible="true"
+          class="absolute md:relative z-40 md:border-none bg-white top-0 right-0 md:h-auto h-screen px-6 flex flex-col ml-auto border border-gray-300 pt-32 md:pt-0"
+          id="menu2"
+        >
           <ul
             id="menu"
             class="flex-col md:flex-row gap-5 flex h-full md:items-center md:gap-1"
@@ -58,27 +66,57 @@
 
           <div class="col-span-full flex flex-col mt-8">
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" required placeholder="Ingrese el nombre..."/>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              required
+              placeholder="Ingrese el nombre..."
+            />
           </div>
 
           <div class="col-span-full flex flex-col">
             <label for="correo">Correo:</label>
-            <input type="email" name="correo" id="correo" required placeholder="Ingrese el correo..."/>
+            <input
+              type="email"
+              name="correo"
+              id="correo"
+              required
+              placeholder="Ingrese el correo..."
+            />
           </div>
 
           <div class="col-span-full flex flex-col sm:col-start-1 sm:col-end-2">
             <label for="calle">Calle:</label>
-            <input type="text" name="calle" id="calle" required placeholder="Ingrese la calle..."/>
+            <input
+              type="text"
+              name="calle"
+              id="calle"
+              required
+              placeholder="Ingrese la calle..."
+            />
           </div>
 
           <div class="col-span-full flex flex-col sm:col-start-2 sm:col-end-2">
             <label for="puerta">Nro De Puerta:</label>
-            <input type="text" name="puerta" id="puerta" required placeholder="Ingrese el nro de puerta..."/>
+            <input
+              type="text"
+              name="puerta"
+              id="puerta"
+              required
+              placeholder="Ingrese el nro de puerta..."
+            />
           </div>
 
           <div class="col-span-full flex flex-col">
             <label for="telefono">Teléfono:</label>
-            <input type="tel" name="telefono" id="telefono" required placeholder="Ingrese el teléfono..."/>
+            <input
+              type="tel"
+              name="telefono"
+              id="telefono"
+              required
+              placeholder="Ingrese el teléfono..."
+            />
           </div>
 
           <div class="col-span-full flex flex-col sm:flex-row gap-2 mt-8">
@@ -110,27 +148,57 @@
           <form class="grid grid-cols-2 gap-2" id="modificar-proveedor">
             <div class="col-span-full flex flex-col">
               <label for="mod-nombre">Nombre:</label>
-              <input type="text" name="nombre" id="mod-nombre" required placeholder="Ingrese el nombre..."/>
+              <input
+                type="text"
+                name="nombre"
+                id="mod-nombre"
+                required
+                placeholder="Ingrese el nombre..."
+              />
             </div>
 
             <div class="col-span-full flex flex-col">
               <label for="mod-correo">Correo:</label>
-              <input type="email" name="correo" id="mod-correo" required placeholder="Ingrese el correo..."/>
+              <input
+                type="email"
+                name="correo"
+                id="mod-correo"
+                required
+                placeholder="Ingrese el correo..."
+              />
             </div>
 
             <div class="col-span-full flex flex-col">
               <label for="mod-calle">Calle:</label>
-              <input type="text" name="calle" id="mod-calle" required placeholder="Ingrese la calle..."/>
+              <input
+                type="text"
+                name="calle"
+                id="mod-calle"
+                required
+                placeholder="Ingrese la calle..."
+              />
             </div>
 
             <div class="col-span-full flex flex-col">
               <label for="mod-puerta">Nro De Puerta:</label>
-              <input type="text" name="puerta" id="mod-puerta" required placeholder="Ingrese el nro de puerta..."/>
+              <input
+                type="text"
+                name="puerta"
+                id="mod-puerta"
+                required
+                placeholder="Ingrese el nro de puerta..."
+              />
             </div>
 
             <div class="col-span-full flex flex-col">
               <label for="mod-telefono">Teléfono:</label>
-              <input type="tel" name="telefono" id="mod-telefono" required placeholder="Ingrese el teléfono..."/>
+              <input
+                type="tel"
+                name="telefono"
+                id="mod-telefono"
+                required
+                placeholder="Ingrese el teléfono..."
+              />
             </div>
 
             <div class="col-span-full flex flex-col sm:flex-row gap-2 mt-8">

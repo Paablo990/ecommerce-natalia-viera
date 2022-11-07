@@ -24,5 +24,9 @@ td {
   @apply border border-gray-900 p-1;
 }
 
+nav[data-visible='false'] {
+  @apply hidden;
+}
+
 @tailwind components;
 @tailwind utilities;

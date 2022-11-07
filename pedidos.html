@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-auto">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,6 +7,7 @@
     <title>Natalia Viera - Pedidos</title>
     <link rel="stylesheet" href="./css/output.css" />
     <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/utils/navbar-responsive.js" defer type="module"></script>
     <script src="./js/pedidos.js" defer type="module"></script>
   </head>
   <body class="text-gray-900">
@@ -19,14 +20,22 @@
             class="h-9"
           />
         </a>
-        <nav class="hidden md:flex ml-auto">
+
+        <button id="toggle-menu" class="ml-auto z-50 md:hidden">
+          <img src="./img/assets/menu.svg" width="48px" height="48px" />
+        </button>
+
+        <nav
+          data-visible="true"
+          class="absolute md:relative z-40 md:border-none bg-white top-0 right-0 md:h-auto h-screen px-6 flex flex-col ml-auto border border-gray-300 pt-32 md:pt-0"
+          id="menu2"
+        >
           <ul
             id="menu"
             class="flex-col md:flex-row gap-5 flex h-full md:items-center md:gap-1"
           >
             <li><a class="p-2" href="./">Inicio</a></li>
             <li><a class="p-2" href="./productos.html">Productos</a></li>
-            <li></li>
             <li><a class="p-2" href="./paquetes.html">Paquetes</a></li>
             <li>
               <a class="p-2" href="./inicio-de-sesion.html">Carrito</a>

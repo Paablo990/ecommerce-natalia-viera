@@ -7,21 +7,29 @@
     <title>Natalia Viera - Usuarios</title>
     <link rel="stylesheet" href="./css/output.css" />
     <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/utils/navbar-responsive.js" defer type="module"></script>
     <script src="./js/administracion-usuarios.js" defer type="module"></script>
   </head>
   <body class="text-gray-900">
-    <header
-      class="sticky md:text-sm lg:text-base top-0 left-0 border-b border-gray-300 bg-white z-50"
-    >
+    <header class="sticky top-0 left-0 border-b border-gray-300 bg-white z-50">
       <div class="container mx-auto flex">
-        <a href="./administracion.html" class="py-2">
+        <a href="./" class="py-2">
           <img
             src="./img/assets/natalia-logo.svg"
             alt="Logo natalia viera"
             class="h-9"
           />
         </a>
-        <nav class="hidden md:flex ml-auto">
+
+        <button id="toggle-menu" class="ml-auto z-50 md:hidden">
+          <img src="./img/assets/menu.svg" width="48px" height="48px" />
+        </button>
+
+        <nav
+          data-visible="true"
+          class="absolute md:relative z-40 md:border-none bg-white top-0 right-0 md:h-auto h-screen px-6 flex flex-col ml-auto border border-gray-300 pt-32 md:pt-0"
+          id="menu2"
+        >
           <ul
             id="menu"
             class="flex-col md:flex-row gap-5 flex h-full md:items-center md:gap-1"

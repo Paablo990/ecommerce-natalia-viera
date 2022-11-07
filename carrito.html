@@ -7,6 +7,7 @@
     <title>Natalia Viera - Carrito</title>
     <link rel="stylesheet" href="./css/output.css" />
     <script src="./js/jquery.js" defer type="module"></script>
+    <script src="./js/utils/navbar-responsive.js" defer type="module"></script>
     <script src="./js/carrito.js" defer type="module"></script>
   </head>
   <body class="text-gray-900 flex flex-col h-full">
@@ -19,14 +20,22 @@
             class="h-9"
           />
         </a>
-        <nav class="hidden md:flex ml-auto">
+
+        <button id="toggle-menu" class="ml-auto z-50 md:hidden">
+          <img src="./img/assets/menu.svg" width="48px" height="48px" />
+        </button>
+
+        <nav
+          data-visible="true"
+          class="absolute md:relative z-40 md:border-none bg-white top-0 right-0 md:h-auto h-screen px-6 flex flex-col ml-auto border border-gray-300 pt-32 md:pt-0"
+          id="menu2"
+        >
           <ul
             id="menu"
             class="flex-col md:flex-row gap-5 flex h-full md:items-center md:gap-1"
           >
             <li><a class="p-2" href="./">Inicio</a></li>
             <li><a class="p-2" href="./productos.html">Productos</a></li>
-            <li></li>
             <li><a class="p-2" href="./paquetes.html">Paquetes</a></li>
             <li>
               <a class="p-2" href="./inicio-de-sesion.html">Carrito</a>
@@ -64,24 +73,48 @@
               class="col-span-full sm:col-end-2 sm:col-start-1 flex flex-col"
             >
               <label for="nombre">Nombre del Titular:</label>
-              <input type="text" name="nombre" id="nombre" required placeholder="Ingrese el nombre del titular..."/>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                required
+                placeholder="Ingrese el nombre del titular..."
+              />
             </div>
 
             <div class="col-span-full sm:col-start-2 flex flex-col">
               <label for="apellido">Apellido del Titular:</label>
-              <input type="text" name="apellido" id="apellido" required placeholder="Ingrese el apellido del titular..."/>
+              <input
+                type="text"
+                name="apellido"
+                id="apellido"
+                required
+                placeholder="Ingrese el apellido del titular..."
+              />
             </div>
 
             <div class="col-span-full flex flex-col">
               <label for="tarjeta">Número de Tarjeta:</label>
-              <input type="number" name="tarjeta" id="tarjeta" required placeholder="Ingrese el número de tarjeta..."/>
+              <input
+                type="number"
+                name="tarjeta"
+                id="tarjeta"
+                required
+                placeholder="Ingrese el número de tarjeta..."
+              />
             </div>
 
             <div
               class="col-span-full sm:col-end-2 sm:col-start-1 flex flex-col"
             >
               <label for="codigo">CVV:</label>
-              <input type="number" name="codigo" id="codigo" required placeholder="Ingrese el CVV..."/>
+              <input
+                type="number"
+                name="codigo"
+                id="codigo"
+                required
+                placeholder="Ingrese el CVV..."
+              />
             </div>
 
             <div class="flex-col sm:flex-row flex gap-2 mt-8 col-span-full">
