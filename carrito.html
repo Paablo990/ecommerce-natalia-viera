@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -64,29 +64,29 @@
               class="col-span-full sm:col-end-2 sm:col-start-1 flex flex-col"
             >
               <label for="nombre">Nombre del Titular:</label>
-              <input type="text" name="nombre" id="nombre" required />
+              <input type="text" name="nombre" id="nombre" required placeholder="Ingrese el nombre del titular..."/>
             </div>
 
             <div class="col-span-full sm:col-start-2 flex flex-col">
               <label for="apellido">Apellido del Titular:</label>
-              <input type="text" name="apellido" id="apellido" required />
+              <input type="text" name="apellido" id="apellido" required placeholder="Ingrese el apellido del titular..."/>
             </div>
 
             <div class="col-span-full flex flex-col">
-              <label for="tarjeta">Numero de Tarjeta:</label>
-              <input type="number" name="tarjeta" id="tarjeta" required />
+              <label for="tarjeta">Número de Tarjeta:</label>
+              <input type="number" name="tarjeta" id="tarjeta" required placeholder="Ingrese el número de tarjeta..."/>
             </div>
 
             <div
               class="col-span-full sm:col-end-2 sm:col-start-1 flex flex-col"
             >
-              <label for="codigo">Codigo de Seguridad:</label>
-              <input type="number" name="codigo" id="codigo" required />
+              <label for="codigo">CVV:</label>
+              <input type="number" name="codigo" id="codigo" required placeholder="Ingrese el CVV..."/>
             </div>
 
             <div class="flex-col sm:flex-row flex gap-2 mt-8 col-span-full">
               <button class="cta flex-1" id="compra-submit" type="submit">
-                Crear
+                Aceptar
               </button>
               <button class="cta" id="compra-reset" type="reset">
                 Limpiar

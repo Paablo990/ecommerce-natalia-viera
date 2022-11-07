@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-auto">
+<html lang="es" class="h-auto">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -69,12 +69,12 @@
 
           <div class="flex flex-col col-span-full">
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" required />
+            <input type="text" name="nombre" id="nombre" required placeholder="Ingrese el nombre..."/>
           </div>
 
           <div class="flex flex-col col-span-full sm:col-start-1 sm:col-end-2">
             <label for="precio">Precio</label>
-            <input type="number" name="precio" id="precio" min="1" required />
+            <input type="number" name="precio" id="precio" min="1" required placeholder="Ingrese el precio..."/>
           </div>
 
           <div class="flex flex-col col-span-full sm:col-start-2 sm:col-end-3">
@@ -86,12 +86,13 @@
               min="0"
               max="99"
               required
+              placeholder="Ingrese el descuento..."
             />
           </div>
 
           <div class="flex flex-col col-span-full sm:col-start-3 sm:col-end-3">
             <label for="stock">Stock</label>
-            <input type="number" name="stock" id="stock" min="0" required />
+            <input type="number" name="stock" id="stock" min="0" required placeholder="Ingrese el stock..."/>
           </div>
 
           <div class="flex flex-col col-span-full">
@@ -120,6 +121,7 @@
               cols="30"
               rows="10"
               required
+              placeholder="Ingrese la descripcion..."
             ></textarea>
           </div>
 
@@ -150,7 +152,7 @@
           <form class="mt-2 grid grid-cols-3 gap-2" id="modificar-producto">
             <div class="flex flex-col col-span-full">
               <label for="mod-nombre">Nombre:</label>
-              <input type="text" name="nombre" id="mod-nombre" required />
+              <input type="text" name="nombre" id="mod-nombre" required placeholder="Ingrese el nombre..."/>
             </div>
 
             <div
@@ -163,6 +165,7 @@
                 id="mod-precio"
                 min="1"
                 required
+                placeholder="Ingrese el precio..."
               />
             </div>
 
@@ -177,6 +180,7 @@
                 min="0"
                 max="99"
                 required
+                placeholder="Ingrese el descuento..."
               />
             </div>
 
@@ -190,6 +194,7 @@
                 id="mod-stock"
                 min="0"
                 required
+                placeholder="Ingrese el stock..."
               />
             </div>
 
@@ -212,13 +217,14 @@
             </div>
 
             <div class="flex flex-col col-span-full">
-              <label for="mod-descripcion">Descripcion:</label>
+              <label for="mod-descripcion">Descripción:</label>
               <textarea
                 name="descripcion"
                 id="mod-descripcion"
                 cols="30"
                 rows="10"
                 required
+                placeholder="Ingrese el descripción..."
               ></textarea>
             </div>
 

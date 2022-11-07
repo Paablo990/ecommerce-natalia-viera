@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS PRODUCTOS(
   descuento INT NOT NULL,
   stock INT NOT NULL,
   descripcion VARCHAR(4096),
-  categoria ENUM('pierna','brazo','torzo','cabeza','accesorio') default ('accesorio') NOT NULL,
+  categoria ENUM('pierna','brazo','torso','cabeza','accesorio') default ('accesorio') NOT NULL,
   PRIMARY KEY (id_producto)
 );
 
