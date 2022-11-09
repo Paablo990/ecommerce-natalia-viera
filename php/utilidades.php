@@ -24,7 +24,7 @@ function existeAdministrador(
   $existe = $db->queryWithParams(
     $query,
     [$id_usuario],
-    "s"
+    "i"
   )[0]["existe"];
 
   return $existe > 0;
