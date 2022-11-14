@@ -802,6 +802,10 @@ nav[data-visible='false'] {
   left: -0.5rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -892,12 +896,12 @@ nav[data-visible='false'] {
   height: 2.25rem;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-screen {
   height: 100vh;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .h-1\/2 {
@@ -1105,14 +1109,14 @@ nav[data-visible='false'] {
   padding-bottom: 0.5rem;
 }
 
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .py-6 {
@@ -1132,6 +1136,10 @@ nav[data-visible='false'] {
 
 .pt-32 {
   padding-top: 8rem;
+}
+
+.pb-16 {
+  padding-bottom: 4rem;
 }
 
 .text-4xl {
@@ -1326,11 +1334,6 @@ nav[data-visible='false'] {
   .md\:pt-0 {
     padding-top: 0px;
   }
-
-  .md\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -1348,10 +1351,5 @@ nav[data-visible='false'] {
 
   .lg\:gap-1 {
     gap: 0.25rem;
-  }
-
-  .lg\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 }

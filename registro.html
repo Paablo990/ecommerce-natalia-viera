@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-auto">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,8 +9,8 @@
     <script src="./js/jquery.js" defer type="module"></script>
     <script src="./js/registro.js" defer type="module"></script>
   </head>
-  <body class="h-full text-gray-900">
-    <header class="bg-white left-0 right-0 border-b border-gray-300">
+  <body class="text-gray-900 flex flex-col h-auto">
+    <header class="bg-white border-b border-gray-300">
       <div class="container mx-auto flex">
         <a href="./" class="py-2">
           <img
@@ -22,10 +22,10 @@
       </div>
     </header>
 
-    <main class="grid place-items-center h-full">
+    <main class="py-16">
       <div class="container mx-auto">
         <form
-          class="grid grid-cols-2 py-16 border border-gray-300 px-8 max-w-md gap-2 mx-auto my-16"
+          class="grid grid-cols-2 py-16 border border-gray-300 px-8 max-w-md gap-2 mx-auto"
           id="registro"
         >
           <h1 class="text-5xl font-black">Registro</h1>
@@ -110,17 +110,17 @@
         <p id="resultado"></p>
       </div>
     </main>
-  </body>
 
-  <footer class="bg-black mt-8">
-    <div class="container mx-auto py-2">
-      <a href="./" class="py-2">
-        <img
-          src="./img/assets/natalia-logo-blanco.svg"
-          alt="Logo natalia viera"
-          class="h-9"
-        />
-      </a>
-    </div>
-  </footer>
+    <footer class="bg-black">
+      <div class="container mx-auto py-2">
+        <a href="./" class="py-2">
+          <img
+            src="./img/assets/natalia-logo-blanco.svg"
+            alt="Logo natalia viera"
+            class="h-9"
+          />
+        </a>
+      </div>
+    </footer>
+  </body>
 </html>
