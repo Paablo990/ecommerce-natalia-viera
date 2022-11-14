@@ -537,7 +537,7 @@ GROUP BY `VIEW_PAQUETES_CON_IMAGEN`.`id`;
 
 CREATE VIEW VIEW_PEDIDOS_CON_FECHAS AS
 SELECT `CLIENTES`.`id_cliente`, `PEDIDOS`.`id_pedido`, `PEDIDOS`.`estado`, `PEDIDOS`.`tarjeta`,
-`PEDIDOS`.`monto`, `REALIZA`.`fecha_solicitud`, `REALIZA`.`fecha_entrega`
+`PEDIDOS`.`monto`, DATE_FORMAT(`REALIZA`.`fecha_solicitud`, '%d/%m/%Y') `fecha_solicitud`, `REALIZA`.`fecha_entrega`
 FROM PEDIDOS
 INNER JOIN REALIZA
 ON `PEDIDOS`.`id_pedido`=`REALIZA`.`id_pedido`
@@ -789,3 +789,8 @@ INSERT INTO TIENE_2 (id_paquete, id_producto, id_proveedor) VALUES
 (2,16,3),
 (2,14,3),
 (2,24,3);
+
+
+
+
+SELECT DATE_FORMAT(`realiza`.`fecha_solicitud`, '%d/%m/%Y') FROM REALIZA

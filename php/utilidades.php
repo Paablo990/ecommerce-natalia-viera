@@ -17,14 +17,14 @@ function existeProveedor(
 
 function existeAdministrador(
   Database $db,
-  string $id_usuario
+  int $id_usuario
 ): bool {
   $query = "SELECT count(*) `existe` FROM USUARIOS WHERE `id_usuario`=?";
 
   $existe = $db->queryWithParams(
     $query,
     [$id_usuario],
-    "s"
+    "i"
   )[0]["existe"];
 
   return $existe > 0;
