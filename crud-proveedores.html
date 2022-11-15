@@ -72,6 +72,7 @@
               id="nombre"
               required
               placeholder="Ingrese el nombre..."
+              pattern="^[\w \xC0-\xFF\d_\-]*$"
             />
           </div>
 
@@ -94,6 +95,7 @@
               id="calle"
               required
               placeholder="Ingrese la calle..."
+              pattern="^[\w \xC0-\xFF\d_\-]*$"
             />
           </div>
 
@@ -105,6 +107,8 @@
               id="puerta"
               required
               placeholder="Ingrese el nro de puerta..."
+              pattern="^[\w \xC0-\xFF\d_\-]*$"
+              maxlength="8"
             />
           </div>
 
@@ -116,6 +120,7 @@
               id="telefono"
               required
               placeholder="Ingrese el teléfono..."
+              pattern="^[0-9]{8}$"
             />
           </div>
 
@@ -154,6 +159,7 @@
                 id="mod-nombre"
                 required
                 placeholder="Ingrese el nombre..."
+                pattern="^[\w \xC0-\xFF\d_\-]*$"
               />
             </div>
 
@@ -176,6 +182,7 @@
                 id="mod-calle"
                 required
                 placeholder="Ingrese la calle..."
+                pattern="^[\w \xC0-\xFF\d_\-]*$"
               />
             </div>
 
@@ -187,6 +194,8 @@
                 id="mod-puerta"
                 required
                 placeholder="Ingrese el nro de puerta..."
+                pattern="^[\w \xC0-\xFF\d_\-]*$"
+                maxlength="8"
               />
             </div>
 
@@ -198,6 +207,7 @@
                 id="mod-telefono"
                 required
                 placeholder="Ingrese el teléfono..."
+                pattern="^[0-9]{8}$"
               />
             </div>
 

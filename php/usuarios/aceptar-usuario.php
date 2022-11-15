@@ -65,6 +65,16 @@ try {
     "i"
   );
 
+  $query = "INSERT INTO CARRITOS (`id_cliente`) VALUES (?)";
+
+  $database->insertRow(
+    $query,
+    [
+      $id_nuevo_usuario,
+    ],
+    "i"
+  );
+
   $query = "DELETE FROM USUARIOS_NA WHERE `ci`=?";
 
   $database->updateOrDeleteRow(
