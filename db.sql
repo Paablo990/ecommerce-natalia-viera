@@ -606,16 +606,6 @@ INNER JOIN VIEW_PAQUETES_CON_IMAGEN
 ON `TIENE_P_2`.`id_paquete`=`VIEW_PAQUETES_CON_IMAGEN`.`id`
 GROUP BY `TIENE_P_2`.`id_paquete`;
 
-delimiter //
-CREATE TRIGGER AFTER_NUEVOS_CLIENTES
-	AFTER INSERT
-    ON CLIENTES
-    FOR EACH ROW
-BEGIN
-	INSERT INTO CARRITOS (`id_cliente`) VALUES (new.`id_cliente`);
-END
-// delimiter ;
-
 INSERT INTO PRODUCTOS (nombre, descripcion, precio, stock, descuento) VALUES
 ('Guantes Nitrilo Puño Elastizado Steelpro', 'Recubierto: Nitrilo, Color: Azul, Buen agarre en seco, Puño tejido, Buena barrera contra la grasa y aceites, Posee excelente resistencia a la abrasión, cortes y rasgaduras.', 99, 26,0),
 ('Guantes De Trabajo Para Temperatura Chard Guard', 'El CharGuard con su forro interior aislante está diseñado para brindar protección al calor en seco al mismo tiempo que brinda flexibilidad y ajuste. El color negro del CharGuard extiende su uso. Su recubrimiento patentado le brinda resistencia a la abrasión y agarre. Esta diseñado para resistir la exposición al calor, múltiples lavados y mantener su flexibilidad', 1523, 24,0),
