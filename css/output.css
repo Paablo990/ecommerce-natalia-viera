@@ -802,10 +802,6 @@ nav[data-visible='false'] {
   left: -0.5rem;
 }
 
-.bottom-0 {
-  bottom: 0px;
-}
-
 .z-50 {
   z-index: 50;
 }
@@ -821,11 +817,6 @@ nav[data-visible='false'] {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 
 .ml-auto {
@@ -1138,8 +1129,20 @@ nav[data-visible='false'] {
   padding-top: 8rem;
 }
 
-.pb-16 {
-  padding-bottom: 4rem;
+.pb-32 {
+  padding-bottom: 8rem;
+}
+
+.pb-64 {
+  padding-bottom: 16rem;
+}
+
+.pb-72 {
+  padding-bottom: 18rem;
+}
+
+.pb-96 {
+  padding-bottom: 24rem;
 }
 
 .text-4xl {

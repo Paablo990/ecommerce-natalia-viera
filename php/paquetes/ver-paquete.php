@@ -56,6 +56,7 @@ try {
   $paquete = array_merge($paquete, ["productos" =>  $productos]);
   $paquete = array_merge($paquete, ["imagen" =>  $imagen]);
 
+  $database->close();
   echo json_encode(["resultado" => $paquete]);
   return http_response_code(200);
 

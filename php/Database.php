@@ -6,7 +6,7 @@ class Database
 
   public function __construct()
   {
-    $this->db = new mysqli("localhost", "root", "12345678", "SISdb");
+    $this->db = new mysqli("localhost", "root", "root", "SISdb");
   }
 
   // @@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -83,7 +83,7 @@ try {
     );
   }
 
-
+  $database->close();
   echo json_encode(["resultado" => "Se modifico correctamente el paquete con id " . $id_paquete]);
   return http_response_code(200);
 

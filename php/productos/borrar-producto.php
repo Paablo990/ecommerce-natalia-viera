@@ -39,11 +39,13 @@ try {
     "i"
   );
 
+  $database->close();
   echo json_encode(["resultado" => "Se borro correctamente el producto con id " . $id_producto]);
   return http_response_code(200);
 
   // errores inesperados
 } catch (mysqli_sql_exception $th) {
+  $database->close();
   echo json_encode([
     "resultado" => $th->getMessage(),
     "codigo" => $th->getCode()
@@ -52,6 +54,7 @@ try {
 
   // errores esperados
 } catch (Exception $ex) {
+  $database->close();
   echo json_encode([
     "resultado" => $ex->getMessage(),
     "codigo" => $ex->getCode()

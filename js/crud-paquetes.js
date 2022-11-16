@@ -131,6 +131,7 @@ $(async () => {
     $('#tabla-seleccionar').html('No hay productos seleccionados...');
 
     form.reset();
+    await cargarTabla();
   });
 
   $('#mod-id-seleccionar').attr('disabled', '');

@@ -76,11 +76,13 @@ try {
     );
   }
 
+  $database->close();
   echo json_encode(["resultado" => "Se agrego correctamente al carrito"]);
   return http_response_code(201);
 
   // errores inesperados
 } catch (Throwable | mysqli_sql_exception $th) {
+  $database->close();
   echo json_encode([
     "resultado" => $th->getMessage(),
     "codigo" => $th->getCode()
@@ -89,6 +91,7 @@ try {
 
   // errores esperados
 } catch (Exception $ex) {
+  $database->close();
   echo json_encode([
     "resultado" => $ex->getMessage(),
     "codigo" => $ex->getCode()

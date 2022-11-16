@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-auto">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -51,7 +51,7 @@
       </div>
     </header>
 
-    <main class="container mx-auto py-16 h-full">
+    <main class="container mx-auto py-16 h-full pb-72">
       <div class="flex flex-col gap-6">
         <div class="flex-1 flex flex-col gap-6">
           <h1 class="text-4xl font-black">Carrito</h1>
@@ -101,6 +101,7 @@
                 id="tarjeta"
                 required
                 placeholder="Ingrese el número de tarjeta..."
+                pattern="^[0-9]{16}$"
               />
             </div>
 
@@ -109,11 +110,12 @@
             >
               <label for="codigo">CVV:</label>
               <input
-                type="number"
+                type="tel"
                 name="codigo"
                 id="codigo"
                 required
                 placeholder="Ingrese el CVV..."
+                pattern="^[0-9]{4}$"
               />
             </div>
 

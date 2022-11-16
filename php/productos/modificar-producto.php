@@ -131,11 +131,13 @@ try {
     "ii"
   );
 
+  $database->close();
   echo json_encode(["resultado" => "Se modifico correctamente el producto con id " . $id_producto]);
   return http_response_code(200);
 
   // errores inesperados
 } catch (Throwable | mysqli_sql_exception $th) {
+  $database->close();
   echo json_encode([
     "resultado" => $th->getMessage(),
     "codigo" => $th->getCode()
@@ -144,6 +146,7 @@ try {
 
   // errores esperados
 } catch (Exception $ex) {
+  $database->close();
   echo json_encode([
     "resultado" => $ex->getMessage(),
     "codigo" => $ex->getCode()

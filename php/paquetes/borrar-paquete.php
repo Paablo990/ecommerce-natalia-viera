@@ -29,6 +29,7 @@ try {
     "i"
   );
 
+  $database->close();
   echo json_encode(["resultado" => "Se borro correctamente el paquete con id " . $id_paquete]);
   return http_response_code(200);
 

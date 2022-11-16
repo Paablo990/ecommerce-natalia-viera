@@ -16,11 +16,13 @@ try {
     "s"
   );
 
+  $database->close();
   echo json_encode(["resultado" => $usuarios_na]);
   return http_response_code(200);
 
   // errores inesperados
 } catch (Throwable | mysqli_sql_exception $th) {
+  $database->close();
   echo json_encode([
     "resultado" => $th->getMessage(),
     "codigo" => $th->getCode()
@@ -29,6 +31,7 @@ try {
 
   // errores esperados
 } catch (Exception $ex) {
+  $database->close();
   echo json_encode([
     "resultado" => $ex->getMessage(),
     "codigo" => $ex->getCode()

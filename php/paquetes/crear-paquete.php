@@ -61,6 +61,7 @@ try {
     );
   }
 
+  $database->close();
   echo json_encode(["resultado" => "Se creo el paquete correctamente con id " . $id_nuevo_paquete]);
   return http_response_code(201);
 
