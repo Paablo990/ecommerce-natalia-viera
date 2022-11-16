@@ -685,6 +685,10 @@ main {
   height: 100%;
 }
 
+.bord-rad-15{
+  border-radius: 15px;
+}
+
 .hero {
   background-image: url('./../img/assets/hero-picture.jpg');
 }
@@ -790,6 +794,10 @@ nav[data-visible='false'] {
   right: 0px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .-top-2 {
   top: -0.5rem;
 }
@@ -841,6 +849,18 @@ nav[data-visible='false'] {
 
 .mt-16 {
   margin-top: 4rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .block {
@@ -1129,20 +1149,8 @@ nav[data-visible='false'] {
   padding-top: 8rem;
 }
 
-.pb-32 {
-  padding-bottom: 8rem;
-}
-
-.pb-64 {
-  padding-bottom: 16rem;
-}
-
 .pb-72 {
   padding-bottom: 18rem;
-}
-
-.pb-96 {
-  padding-bottom: 24rem;
 }
 
 .text-4xl {
@@ -1243,6 +1251,34 @@ nav[data-visible='false'] {
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.btnhero{
+  background-color: transparent;
+  color: #2653F1;
+  border-radius: 15px;
+  border: 1px solid #2653F1;
+}
+
+.pepe{
+  border-radius: 10px 0px 0px 0px;
+}
+
+.customizeproductprice{
+  background-color: #4a72ff;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 5px;
+  min-width: 52px;
+  text-align: center;
+}
+
+.-right-3 {
+  right: -2rem;
+}
+
+.-top-2 {
+  top: -0.9rem;
 }
 
 @media (min-width: 640px) {

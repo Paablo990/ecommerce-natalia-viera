@@ -8,8 +8,16 @@
     <link rel="stylesheet" href="./css/output.css" />
     <script src="./js/jquery.js" defer type="module"></script>
     <script src="./js/inicio-de-sesion.js" defer type="module"></script>
+    <link rel="stylesheet" href="css/back.css" />
   </head>
   <body class="text-gray-900 h-full">
+    <div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
     <header class="bg-white left-0 right-0 border-b border-gray-300">
       <div class="container mx-auto flex">
         <a href="./" class="py-2">
@@ -22,10 +30,10 @@
       </div>
     </header>
 
-    <main class="h-full grid place-items-center">
+    <main class="grid place-items-center">
       <div class="container mx-auto">
         <form
-          class="flex flex-col py-16 border border-gray-300 px-8 max-w-md gap-2 mx-auto"
+          class="flex flex-col py-16 border border-gray-300 px-8 max-w-md gap-2 mx-auto bg-white"
           id="inicio-de-sesion"
         >
           <h1 class="text-5xl font-black">Inicio de Sesión</h1>
@@ -65,7 +73,7 @@
       </div>
     </main>
 
-    <footer class="bg-black mt-8">
+    <footer class="bg-black absolute bottom-0 w-full">
       <div class="container mx-auto py-2">
         <a href="./" class="py-2">
           <img

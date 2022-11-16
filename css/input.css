@@ -6,6 +6,11 @@ main {
   height: 100%;
 }
 
+.bord-rad-15{
+  border-radius: 15px;
+}
+
+
 .hero {
   background-image: url('./../img/assets/hero-picture.jpg');
 }
@@ -30,3 +35,26 @@ nav[data-visible='false'] {
 
 @tailwind components;
 @tailwind utilities;
+
+.btnhero{
+  background-color: transparent;
+  color: #2653F1;
+  border-radius: 15px;
+  border: 1px solid #2653F1;
+}
+
+.pepe{border-radius: 10px 0px 0px 0px;}
+.customizeproductprice{
+  background-color: #4a72ff;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 5px;
+  min-width: 52px;
+  text-align: center;}
+  .-right-3 {
+    right: -2rem;
+}
+
+.-top-2 {
+    top: -0.9rem;
+}

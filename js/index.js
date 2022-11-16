@@ -18,7 +18,7 @@ async function cargarUltimosProductos() {
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/productos/ver-productos.php`, {
       method: 'get',
-      cache: 'no-cache'
+      cache: 'no-cache',
     })
   ).json();
 
@@ -33,7 +33,7 @@ async function cargarUltimosProductos() {
   $('#ultimos-productos').html(
     resultado
       .slice(0, 6)
-      .map(producto => renderProducto(producto))
+      .map((producto) => renderProducto(producto))
       .join('')
   );
 }
@@ -44,7 +44,7 @@ async function cargarUltimosPaquetes() {
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/paquetes/ver-paquetes.php`, {
       method: 'get',
-      cache: 'no-cache'
+      cache: 'no-cache',
     })
   ).json();
 
@@ -59,7 +59,7 @@ async function cargarUltimosPaquetes() {
   $('#ultimos-paquetes').html(
     resultado
       .slice(0, 6)
-      .map(paquete => renderPaquete(paquete))
+      .map((paquete) => renderPaquete(paquete))
       .join('')
   );
 }
@@ -70,7 +70,7 @@ async function cargarProductosOferta() {
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/productos/ver-productos.php?oferta=true`, {
       method: 'get',
-      cache: 'no-cache'
+      cache: 'no-cache',
     })
   ).json();
 
@@ -85,7 +85,7 @@ async function cargarProductosOferta() {
   $('#productos-oferta').html(
     resultado
       .slice(0, 6)
-      .map(producto => renderProducto(producto))
+      .map((producto) => renderProducto(producto))
       .join('')
   );
 }
@@ -96,7 +96,7 @@ async function cargarPaquetesOferta() {
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/paquetes/ver-paquetes.php?oferta=true`, {
       method: 'get',
-      cache: 'no-cache'
+      cache: 'no-cache',
     })
   ).json();
 
@@ -111,7 +111,7 @@ async function cargarPaquetesOferta() {
   $('#paquetes-oferta').html(
     resultado
       .slice(0, 6)
-      .map(paquete => renderPaquete(paquete))
+      .map((paquete) => renderPaquete(paquete))
       .join('')
   );
 }
@@ -122,7 +122,7 @@ function renderProducto(producto) {
   const { id, nombre, ruta, descripcion, precio, descuento } = producto;
 
   return `  
-  <li class="flex flex-col border border-gray-300 p-2 gap-2">
+  <li class="flex flex-col border border-gray-300 p-2 gap-2 bord-rad-15">
   <a class="h-1/2" href="./producto.html?id=${id}">
     <img
       class="h-full mx-auto object-cover"
@@ -138,7 +138,7 @@ function renderProducto(producto) {
         : `${descripcion}...`
     }
   </p>
-  <p class="font-semibold relative w-min mt-auto">
+  <p class="font-semibold relative w-min mt-auto customizeproductprice">
     $${precio - (precio * descuento) / 100}
     <span
       class="absolute text-xs -top-2 -right-3 text-red-500 line-through"
@@ -157,13 +157,13 @@ function renderPaquete(paquete) {
     ruta,
     descripcion,
     precio,
-    descuento
+    descuento,
   } = paquete;
 
   return `
-  <li class="flex relative flex-col border border-gray-300 p-2 gap-2">
+  <li class="flex relative flex-col border border-gray-300 p-2 gap-2 bord-rad-15">
   <p
-    class="absolute -left-2 -top-2 bg-natalia-blue-400 text-white uppercase font-black tracking-widest text-xs p-1"
+    class="absolute -left-2 -top-2 bg-natalia-blue-400 text-white uppercase font-black tracking-widest text-xs p-1 pepe"
   >
     Items: ${cantidad_productos}
   </p>
@@ -182,7 +182,7 @@ function renderPaquete(paquete) {
         : `${descripcion}...`
     }
   </p>
-  <p class="font-semibold relative w-min mt-auto">
+  <p class="font-semibold relative w-min mt-auto customizeproductprice">
     $${precio - (precio * descuento) / 100}
     <span
       class="absolute text-xs -top-2 -right-3 text-red-500 line-through"
