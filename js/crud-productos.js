@@ -20,7 +20,10 @@ $(async () => {
     $('#tabla-buscar').html(`Cargando...`);
 
     const { resultado, codigo } = await (
-      await fetch(`${API_URL}/productos/ver-productos.php`, { method: 'get' })
+      await fetch(`${API_URL}/productos/ver-productos.php`, {
+        method: 'get',
+        cache: 'no-cache'
+      })
     ).json();
 
     if (codigo >= 400) {
@@ -59,7 +62,8 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/productos/crear-producto.php`, {
         method: 'post',
-        body: producto
+        body: producto,
+        cache: 'no-cache'
       })
     ).json();
 
@@ -104,7 +108,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/productos/ver-producto.php?id=${id}`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -192,7 +197,7 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(
         `${API_URL}/productos/modificar-producto.php?id=${productoAux.id}`,
-        { method: 'post', body: producto }
+        { method: 'post', body: producto, cache: 'no-cache' }
       )
     ).json();
 
@@ -222,7 +227,8 @@ async function cargarProveedoresCrear() {
 
   const { resultado: proveedores, codigo } = await (
     await fetch(`${API_URL}/proveedores/ver-proveedores.php`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -241,7 +247,8 @@ async function cargarProveedoresModificar() {
 
   const { resultado: proveedores, codigo } = await (
     await fetch(`${API_URL}/proveedores/ver-proveedores.php`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -264,7 +271,10 @@ async function cargarTabla() {
   $('#tabla-buscar').html(`Cargando...`);
 
   const { resultado, codigo } = await (
-    await fetch(`${API_URL}/productos/ver-productos.php`, { method: 'get' })
+    await fetch(`${API_URL}/productos/ver-productos.php`, {
+      method: 'get',
+      cache: 'no-cache'
+    })
   ).json();
 
   if (codigo >= 400) {
@@ -287,7 +297,8 @@ async function borrar(e) {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/productos/borrar-producto.php?id=${id}`, {
-      method: 'delete'
+      method: 'delete',
+      cache: 'no-cache'
     })
   ).json();
 

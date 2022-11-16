@@ -24,7 +24,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/pedidos/ver-pedidos.php?id=${id}`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -69,7 +70,8 @@ async function cargarTabla() {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/pedidos/ver-pedidos.php?id=${id}`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -103,7 +105,8 @@ async function mostrar(e) {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/pedidos/ver-pedido.php?id=${id}`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 

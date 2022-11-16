@@ -42,7 +42,8 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/pedidos/crear-pedido.php`, {
         method: 'post',
-        body: compra
+        body: compra,
+        cache: 'no-cache'
       })
     ).json();
 
@@ -69,7 +70,9 @@ async function cargarCarrito() {
   $('#abrir-dialogo').attr('disabled', '');
 
   const { resultado, codigo } = await (
-    await fetch(`${API_URL}/carritos/ver-carrito.php?id=${id}`)
+    await fetch(`${API_URL}/carritos/ver-carrito.php?id=${id}`, {
+      cache: 'no-cache'
+    })
   ).json();
 
   if (codigo >= 400) {
@@ -121,7 +124,8 @@ async function borrarProducto(e) {
     await fetch(
       `${API_URL}/carritos/quitar-producto-de-carrito.php?id_p=${idProducto}&id_u=${id}`,
       {
-        method: 'delete'
+        method: 'delete',
+        cache: 'no-cache'
       }
     )
   ).json();
@@ -137,7 +141,8 @@ async function borrarPaquete(e) {
     await fetch(
       `${API_URL}/carritos/quitar-paquete-de-carrito.php?id_p=${idPaquete}&id_u=${id}`,
       {
-        method: 'delete'
+        method: 'delete',
+        cache: 'no-cache'
       }
     )
   ).json();

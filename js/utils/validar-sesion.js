@@ -20,7 +20,8 @@ export async function obtenerDatosDeSesion() {
     const { datos, codigo } = await (
       await fetch(`${API_URL}/usuarios/inicio-de-sesion.php`, {
         method: 'post',
-        body: data
+        body: data,
+        cache: 'no-cache'
       })
     ).json();
 
@@ -36,7 +37,8 @@ export async function obtenerDatosDeSesion() {
   const fetchDatos = async id => {
     const { resultado } = await (
       await fetch(`${API_URL}/usuarios/ver-usuario.php?id=${id}`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 

@@ -20,7 +20,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/usuarios/ver-usuarios-na.php`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -59,7 +60,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/usuarios/ver-usuarios.php`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -91,7 +93,8 @@ async function cargarTablaUsuariosNA() {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/usuarios/ver-usuarios-na.php`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -116,7 +119,8 @@ async function cargarTablaUsuarios() {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/usuarios/ver-usuarios.php`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -141,7 +145,8 @@ async function aceptar(e) {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/usuarios/aceptar-usuario.php?ci=${ci}`, {
-      method: 'post'
+      method: 'post',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -168,7 +173,8 @@ async function denegar(e) {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/usuarios/denegar-usuario.php?ci=${ci}`, {
-      method: 'post'
+      method: 'post',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -194,7 +200,8 @@ async function suspender(e) {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/usuarios/suspender-usuario.php?ci=${ci}`, {
-      method: 'post'
+      method: 'post',
+      cache: 'no-cache'
     })
   ).json();
 

@@ -22,7 +22,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/proveedores/ver-proveedores.php`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -60,7 +61,8 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/proveedores/crear-proveedor.php`, {
         method: 'post',
-        body: proveedor
+        body: proveedor,
+        cache: 'no-cache'
       })
     ).json();
 
@@ -95,7 +97,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/proveedores/ver-proveedor.php?id=${id}`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -149,7 +152,7 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(
         `${API_URL}/proveedores/modificar-proveedor.php?id=${proveedorAux.id}`,
-        { method: 'post', body: proveedor }
+        { method: 'post', body: proveedor, cache: 'no-cache' }
       )
     ).json();
 
@@ -187,7 +190,8 @@ async function cargarTabla() {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/proveedores/ver-proveedores.php`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -209,7 +213,8 @@ async function borrar(e) {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/proveedores/borrar-proveedor.php?id=${id}`, {
-      method: 'delete'
+      method: 'delete',
+      cache: 'no-cache'
     })
   ).json();
   await cargarTabla();

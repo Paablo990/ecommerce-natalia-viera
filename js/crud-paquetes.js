@@ -24,7 +24,10 @@ $(async () => {
     $('#tabla-buscar').html(`Cargando...`);
 
     const { resultado, codigo } = await (
-      await fetch(`${API_URL}/paquetes/ver-paquetes.php`, { method: 'get' })
+      await fetch(`${API_URL}/paquetes/ver-paquetes.php`, {
+        method: 'get',
+        cache: 'no-cache'
+      })
     ).json();
 
     if (codigo >= 400) {
@@ -69,7 +72,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/productos/ver-producto.php?id=${id}`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -111,7 +115,8 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/paquetes/crear-paquete.php`, {
         method: 'post',
-        body: paquete
+        body: paquete,
+        cache: 'no-cache'
       })
     ).json();
 
@@ -169,7 +174,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/paquetes/ver-paquete.php?id=${id}`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -250,7 +256,7 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(
         `${API_URL}/paquetes/modificar-paquete.php?id=${paqueteAux.id_paquete}`,
-        { method: 'post', body: paquete }
+        { method: 'post', body: paquete, cache: 'no-cache' }
       )
     ).json();
 
@@ -313,7 +319,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/productos/ver-producto.php?id=${id}`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -364,7 +371,10 @@ async function cargarTabla() {
   $('#tabla-buscar').html(`Cargando...`);
 
   const { resultado, codigo } = await (
-    await fetch(`${API_URL}/paquetes/ver-paquetes.php`, { method: 'get' })
+    await fetch(`${API_URL}/paquetes/ver-paquetes.php`, {
+      method: 'get',
+      cache: 'no-cache'
+    })
   ).json();
 
   if (codigo >= 400) {
@@ -405,7 +415,8 @@ async function borrar(e) {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/paquetes/borrar-paquete.php?id=${id}`, {
-      method: 'delete'
+      method: 'delete',
+      cache: 'no-cache'
     })
   ).json();
 

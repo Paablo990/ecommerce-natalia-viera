@@ -16,7 +16,10 @@ async function cargarUltimosProductos() {
   $('#ultimos-productos').html('<li>Cargando...</li>');
 
   const { resultado, codigo } = await (
-    await fetch(`${API_URL}/productos/ver-productos.php`, { method: 'get' })
+    await fetch(`${API_URL}/productos/ver-productos.php`, {
+      method: 'get',
+      cache: 'no-cache'
+    })
   ).json();
 
   if (codigo >= 400) {
@@ -39,7 +42,10 @@ async function cargarUltimosPaquetes() {
   $('#ultimos-paquetes').html('<li>Cargando...</li>');
 
   const { resultado, codigo } = await (
-    await fetch(`${API_URL}/paquetes/ver-paquetes.php`, { method: 'get' })
+    await fetch(`${API_URL}/paquetes/ver-paquetes.php`, {
+      method: 'get',
+      cache: 'no-cache'
+    })
   ).json();
 
   if (codigo >= 400) {
@@ -63,7 +69,8 @@ async function cargarProductosOferta() {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/productos/ver-productos.php?oferta=true`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -88,7 +95,8 @@ async function cargarPaquetesOferta() {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/paquetes/ver-paquetes.php?oferta=true`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 

@@ -10,7 +10,8 @@ $(() => {
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/usuarios/registrar-usuario.php`, {
         method: 'post',
-        body: usuario
+        body: usuario,
+        cache: 'no-cache'
       })
     ).json();
 

@@ -10,7 +10,8 @@ $(() => {
     const { datos, resultado, codigo } = await (
       await fetch(`${API_URL}/usuarios/inicio-de-sesion.php`, {
         method: 'post',
-        body: usuario
+        body: usuario,
+        cache: 'no-cache'
       })
     ).json();
 

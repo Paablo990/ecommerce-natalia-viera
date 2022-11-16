@@ -60,7 +60,8 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/carritos/agregar-producto-a-carrito.php`, {
         method: 'post',
-        body: producto
+        body: producto,
+        cache: 'no-cache'
       })
     ).json();
 
@@ -72,7 +73,8 @@ $(async () => {
 async function fetchProducto(id) {
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/productos/ver-producto.php?id=${id}`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -84,7 +86,7 @@ async function fetchProductosRelacionados(categoria) {
   const { resultado, codigo } = await (
     await fetch(
       `${API_URL}/productos/ver-productos.php?categoria=${categoria}`,
-      { method: 'get' }
+      { method: 'get', cache: 'no-cache' }
     )
   ).json();
 

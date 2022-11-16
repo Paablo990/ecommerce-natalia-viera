@@ -15,7 +15,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/paquetes/ver-paquetes.php?query=${query}`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -40,7 +41,8 @@ async function cargarPaquetes() {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/paquetes/ver-paquetes.php`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 

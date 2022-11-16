@@ -58,7 +58,8 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/carritos/agregar-paquete-a-carrito.php`, {
         method: 'post',
-        body: paquete
+        body: paquete,
+        cache: 'no-cache'
       })
     ).json();
 
@@ -70,7 +71,8 @@ $(async () => {
 async function fetchPaquete(id) {
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/paquetes/ver-paquete.php?id=${id}`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -81,7 +83,8 @@ async function fetchPaquete(id) {
 async function fetchPaquetesRelacionados() {
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/paquetes/ver-paquetes.php`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 

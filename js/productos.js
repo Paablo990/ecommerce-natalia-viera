@@ -19,7 +19,8 @@ $(async () => {
       await fetch(
         `${API_URL}/productos/ver-productos.php?query=${query}&categoria=${categoria}`,
         {
-          method: 'get'
+          method: 'get',
+          cache: 'no-cache'
         }
       )
     ).json();
@@ -51,7 +52,8 @@ async function cargarProductos() {
     await fetch(
       `${API_URL}/productos/ver-productos.php?categoria=${categoria}`,
       {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       }
     )
   ).json();

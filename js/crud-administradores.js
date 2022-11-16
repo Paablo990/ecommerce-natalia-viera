@@ -22,7 +22,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/administradores/ver-administradores.php`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -58,7 +59,8 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/administradores/crear-administrador.php`, {
         method: 'post',
-        body: administrador
+        body: administrador,
+        cache: 'no-cache'
       })
     ).json();
 
@@ -94,7 +96,8 @@ $(async () => {
 
     const { resultado, codigo } = await (
       await fetch(`${API_URL}/administradores/ver-administrador.php?ci=${ci}`, {
-        method: 'get'
+        method: 'get',
+        cache: 'no-cache'
       })
     ).json();
 
@@ -155,7 +158,7 @@ $(async () => {
     const { resultado, codigo } = await (
       await fetch(
         `${API_URL}/administradores/modificar-administrador.php?id=${administradorAux.id}`,
-        { method: 'post', body: administrador }
+        { method: 'post', body: administrador, cache: 'no-cache' }
       )
     ).json();
 
@@ -195,7 +198,8 @@ async function cargarTabla() {
 
   const { resultado, codigo } = await (
     await fetch(`${API_URL}/administradores/ver-administradores.php`, {
-      method: 'get'
+      method: 'get',
+      cache: 'no-cache'
     })
   ).json();
 
@@ -236,7 +240,8 @@ async function borrar(e) {
     await fetch(
       `${API_URL}/administradores/borrar-administrador.php?ci=${ci}`,
       {
-        method: 'delete'
+        method: 'delete',
+        cache: 'no-cache'
       }
     )
   ).json();
